@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tension modulated string – physmodjax</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Tension modulated string – physmodjax">
+<meta property="og:description" content="Physical modelling using neural networks with JAX">
+<meta property="og:site_name" content="physmodjax">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">physmodjax</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/rodrigodzf/physmodjax"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../solver/impulse_generator.html">Solver</a></li><li class="breadcrumb-item"><a href="../solver/wave1d_solver_tensionmodulated.html">Tension modulated string</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Results</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Models</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/autoencoders.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Autoencoder models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/conv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convolutional models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/fno.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fourier Neural Operator in 1D and 2D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/fno_rnn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FNO embedded in a recurrent neural network</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/mlp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MLP models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/recurrent.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recurrent Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/ssm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SSM Models</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Scripts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scripts/dataset_generation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataset generation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../scripts/train_rnn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training an RNN</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Solver</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../solver/impulse_generator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Impulse generator</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../solver/wave1d_solver_fe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finite element solver for the 1D wave equation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../solver/wave1d_solver_modal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modal Solver</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../solver/wave1d_solver_pseudospectral.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pseudo-spectral Solver</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../solver/wave1d_solver_tensionmodulated.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Tension modulated string</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../solver/wave2d_solver_modal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wave 2D linear solver</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../solver/wave2d_solver_tensionmodulated.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tension modulated stiff membrane</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Utils</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../utils/checkpoint.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Checkpoint utils</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../utils/data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dataloading utilities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../utils/ftm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Funtional Transformation Method Utilities</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../utils/linear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linear utility functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../utils/losses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Losses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../utils/metrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Metrics and losses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../utils/modal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modal utils</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../utils/plot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting utilities</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#step-1" id="toc-step-1" class="nav-link active" data-scroll-target="#step-1">Step 1:</a></li>
+  <li><a href="#step-2" id="toc-step-2" class="nav-link" data-scroll-target="#step-2">Step 2:</a></li>
+  <li><a href="#step-3" id="toc-step-3" class="nav-link" data-scroll-target="#step-3">Step 3:</a></li>
+  <li><a href="#step-4" id="toc-step-4" class="nav-link" data-scroll-target="#step-4">Step 4</a></li>
+  <li><a href="#wave1dsolvertensionmodulated" id="toc-wave1dsolvertensionmodulated" class="nav-link" data-scroll-target="#wave1dsolvertensionmodulated">Wave1dSolverTensionModulated</a></li>
+  <li><a href="#nonlinear_string_func" id="toc-nonlinear_string_func" class="nav-link" data-scroll-target="#nonlinear_string_func">nonlinear_string_func</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/rodrigodzf/physmodjax/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../solver/impulse_generator.html">Solver</a></li><li class="breadcrumb-item"><a href="../solver/wave1d_solver_tensionmodulated.html">Tension modulated string</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Tension modulated string</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<section id="step-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-1">Step 1:</h3>
+<p>Start with the non-linear tension modulated string model. The model is defined by the following equations:</p>
+<p><span class="math display">\[
+\begin{align}
+\rho A \frac{\partial^2 y}{\partial t^2} + EI \frac{\partial^4 y}{\partial x^4} - T_{NL}(y) \frac{\partial^2 y}{\partial x^2} + d_{1} \frac{\partial y}{\partial t} + d_{3} \frac{\partial^3 y}{\partial t^3} = f(x,t)
+\end{align}
+\]</span></p>
+<p>where <span class="math inline">\(T_{NL}\)</span> is the non-linear tension function truncated at the third order:</p>
+<p><span class="math display">\[
+\begin{aligned}
+T_{N L}(y) &amp; =T_0+T_1(y(x, t)) \\
+&amp; =T_0+\frac{E A}{2 l_0} \int_0^{l_0} y^2(x, t) d x .
+\end{aligned}
+\]</span></p>
+</section>
+<section id="step-2" class="level3">
+<h3 class="anchored" data-anchor-id="step-2">Step 2:</h3>
+<p>Perform a transformation of the PDE with respect to the spatial variable <span class="math inline">\(x\)</span>. We can do this using the transformation kernel <span class="math inline">\(K(x, \beta_{\mu})\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+K\left(x, \beta_\mu\right) &amp; =\sin \left(\frac{\mu \pi}{l_0} x\right) \\
+\beta_\mu^4 &amp; =E I\left(\frac{\mu \pi}{l_0}\right)^4+T_0\left(\frac{\mu \pi}{l_0}\right)^2
+\end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(\beta_\mu\)</span> is the frequency variable. We see that the <span class="math inline">\(K(x, \beta_{\mu})\)</span> is a function that generates the fourier sine series of the spatial variable <span class="math inline">\(x\)</span>.</p>
+<p>The spatial tranformation of the non-linear term <span class="math inline">\(T_{1}\)</span> is given as:</p>
+<p><span class="math display">\[
+\mathcal{T}\left\{T_1\right\} = \bar{b}(\mu,y,\bar{y})
+\]</span></p>
+<p>We now can write the transformed PDE as:</p>
+<p><span class="math display">\[
+\boxed{
+\begin{aligned}
+\rho A \ddot{\bar{y}}(\mu, t) + \left(d_3 \eta_\mu^2+d_1\right) \dot{\bar{y}}(\mu, t) + \beta_\mu^4 \bar{y}(\mu, t)-\bar{b}(\mu, y, \bar{y}) = 0
+\end{aligned}
+}
+\]</span></p>
+<p>Where <span class="math inline">\(\eta_\mu=-\left(\mu \pi / l_0\right)^2\)</span>. The initial conditions are given as:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\bar{y}_0(\mu) &amp;= \mathcal{T}{\left\{y_0(x)\right\}} \\
+\dot{\bar{y}}_0(\mu) &amp;= \mathcal{T}{\left\{\dot{y}_0(x)\right\}} = 0
+\end{aligned}
+\]</span></p>
+</section>
+<section id="step-3" class="level3">
+<h3 class="anchored" data-anchor-id="step-3">Step 3:</h3>
+<p>Discretize the non-linear term <span class="math inline">\(\bar{b}(\mu, y, \bar{y})\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\bar{b}^d(\mu) &amp; =\eta_\mu^2 \frac{E A \bar{y}(\mu)}{2 l_0} \int_0^{l_0}\left[\sum_{\nu=1}^M \frac{1}{N_\nu} \bar{y}^d(\nu) K(\xi, \nu)\right]^{\prime 2} d x \\
+&amp; =\eta_\mu^2 \frac{E A \pi^2 \bar{y}(\mu)}{l_0^4} \sum_{\nu=1}^M \nu^2\left(\bar{y}^d(\nu)\right)^2
+\end{aligned}
+\]</span></p>
+</section>
+<section id="step-4" class="level3">
+<h3 class="anchored" data-anchor-id="step-4">Step 4</h3>
+<p>Write as a system of first order ODEs:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\dot{\bar{y}}(\mu, t) &amp;= \bar{v}(\mu, t) \\
+\dot{\bar{v}}(\mu, t) &amp;= \frac{-\left(d_3 \eta_\mu^2+d_1\right)}{\rho A} \bar{v}(\mu, t) - \frac{\beta_\mu^4}{\rho A} \bar{y}(\mu, t) + \frac{\bar{b}(\mu, y, \bar{y})}{\rho A}
+\end{aligned}
+\]</span></p>
+<p>This is a system of first-order ODEs. In matrix form, we can write this as:</p>
+<p><span class="math display">\[
+\boxed{
+\begin{aligned}
+\mathbf{\dot{\bar{y}}} &amp;= \mathbf{\bar{v}} \\
+\mathbf{\dot{\bar{v}}} &amp;= -\mathbf{M_v} \mathbf{\bar{v}} - \mathbf{M_y} \mathbf{\bar{y}} + \mathbf{\bar{b}}
+\end{aligned}
+}
+\]</span></p>
+<p>The Matrices <span class="math inline">\(\mathbf{M_v}\)</span>, <span class="math inline">\(\mathbf{M_y}\)</span> are diagonal matrices whose order is equal to the number of modes <span class="math inline">\(M\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathbf{M_v} &amp;= \text{diag}\left(\frac{d_3 \eta_\mu^2+d_1}{\rho A}\right) \\
+\mathbf{M_y} &amp;= \text{diag}\left(\frac{\beta_\mu^4}{\rho A}\right)
+\end{aligned}
+\]</span></p>
+<p>The vector <span class="math inline">\(\mathbf{b}\)</span> contains the non-linear terms and is given as:</p>
+<p><span class="math display">\[
+\mathbf{\Eta} = \text{diag}\left(\eta_\mu^2\right) \\
+T_{1} = \frac{E A \pi^2}{l_0^4} \mathbf{\bar{y}}(\mu)^T \cdot \Eta \cdot \mathbf{\bar{y}} \\
+\mathbf{\bar{b}} = T_{1} \text{diag}(\frac{\eta_\mu^2}{\rho A}) \mathbf{\bar{y}}
+\]</span></p>
+<div id="cell-6" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The parameters of the model are:</p>
+<ul>
+<li><span class="math inline">\(N\)</span>: number of points in the string</li>
+<li><span class="math inline">\(T\)</span>: total time of simulation</li>
+<li><span class="math inline">\(f_s\)</span>: sampling rate</li>
+<li><span class="math inline">\(l\)</span>: length of string</li>
+<li><span class="math inline">\(A\)</span>: string cross-sectional area</li>
+<li><span class="math inline">\(E\)</span>: Young’s modulus</li>
+<li><span class="math inline">\(I\)</span>: string moment of inertia</li>
+<li><span class="math inline">\(\rho\)</span>: density</li>
+<li><span class="math inline">\(Ts_0\)</span>: initial tension</li>
+<li><span class="math inline">\(d_{1}\)</span>: string frequency independent damping</li>
+<li><span class="math inline">\(d_{3}\)</span>: string frequency dependent damping</li>
+<li><span class="math inline">\(M\)</span>: number of modes to include in the modal expansion</li>
+</ul>
+<hr>
+<p><a href="https://github.com/rodrigodzf/physmodjax/blob/main/physmodjax/solver/wave1d_tenmod.py#L50" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="wave1dsolvertensionmodulated" class="level3">
+<h3 class="anchored" data-anchor-id="wave1dsolvertensionmodulated">Wave1dSolverTensionModulated</h3>
+<blockquote class="blockquote">
+<pre><code> Wave1dSolverTensionModulated (sampling_rate:int=48000,
+                               final_time:float=0.5, n_gridpoints:int=101,
+                               length:float=1.0, A:float=1.9634e-07,
+                               I:float=2.454e-14, rho:float=7800,
+                               E:int=190000000000.0, d1:float=0.004,
+                               d3:float=6e-05, Ts0:float=150,
+                               n_max_modes:int=50,
+                               use_nonlinear:bool=True,
+                               method:str='DOP853', rtol:float=1e-12,
+                               atol:float=1e-14)</code></pre>
+</blockquote>
+<p>*Tension modulated wave equation solver.</p>
+<p>This solver is based on the paper “Sound Synthesis With Tension Modulated Nonlinearities” and the accompanying code to the paper “Physical Modeling using Recurrent Neural Networks with Fast Convolutional Layers”.*</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Type</strong></th>
+<th><strong>Default</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>sampling_rate</td>
+<td>int</td>
+<td>48000</td>
+<td>1/s Temporal sampling frequency</td>
+</tr>
+<tr class="even">
+<td>final_time</td>
+<td>float</td>
+<td>0.5</td>
+<td>s Duration of the simulation</td>
+</tr>
+<tr class="odd">
+<td>n_gridpoints</td>
+<td>int</td>
+<td>101</td>
+<td>pts/m Spatial sampling grid</td>
+</tr>
+<tr class="even">
+<td>length</td>
+<td>float</td>
+<td>1.0</td>
+<td>m Length at rest</td>
+</tr>
+<tr class="odd">
+<td>A</td>
+<td>float</td>
+<td>1.9634e-07</td>
+<td>m**2 Cross section area</td>
+</tr>
+<tr class="even">
+<td>I</td>
+<td>float</td>
+<td>2.454e-14</td>
+<td>m**4 Moment of intertia</td>
+</tr>
+<tr class="odd">
+<td>rho</td>
+<td>float</td>
+<td>7800</td>
+<td>kg/m**3 Density</td>
+</tr>
+<tr class="even">
+<td>E</td>
+<td>int</td>
+<td>190000000000.0</td>
+<td>Pa Young’s modulus</td>
+</tr>
+<tr class="odd">
+<td>d1</td>
+<td>float</td>
+<td>0.004</td>
+<td>kg/(ms) Frequency independent loss</td>
+</tr>
+<tr class="even">
+<td>d3</td>
+<td>float</td>
+<td>6e-05</td>
+<td>kg m/s Frequency dependent loss</td>
+</tr>
+<tr class="odd">
+<td>Ts0</td>
+<td>float</td>
+<td>150</td>
+<td>N Tension</td>
+</tr>
+<tr class="even">
+<td>n_max_modes</td>
+<td>int</td>
+<td>50</td>
+<td>Number of modal expansion terms</td>
+</tr>
+<tr class="odd">
+<td>use_nonlinear</td>
+<td>bool</td>
+<td>True</td>
+<td>Use nonlinear wave equation</td>
+</tr>
+<tr class="even">
+<td>method</td>
+<td>str</td>
+<td>DOP853</td>
+<td>Integration method</td>
+</tr>
+<tr class="odd">
+<td>rtol</td>
+<td>float</td>
+<td>1e-12</td>
+<td>Relative tolerance</td>
+</tr>
+<tr class="even">
+<td>atol</td>
+<td>float</td>
+<td>1e-14</td>
+<td>Absolute tolerance</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a href="https://github.com/rodrigodzf/physmodjax/blob/main/physmodjax/solver/wave1d_tenmod.py#L16" target="_blank" style="float:right; font-size:smaller">source</a></p>
+</section>
+<section id="nonlinear_string_func" class="level3">
+<h3 class="anchored" data-anchor-id="nonlinear_string_func">nonlinear_string_func</h3>
+<blockquote class="blockquote">
+<pre><code> nonlinear_string_func (t, state, n_max_modes, use_nonlinear, pre, H, H_1,
+                        M_v, M_y)</code></pre>
+</blockquote>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 38%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Type</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>t</td>
+<td></td>
+<td>time</td>
+</tr>
+<tr class="even">
+<td>state</td>
+<td></td>
+<td>state vector</td>
+</tr>
+<tr class="odd">
+<td>n_max_modes</td>
+<td></td>
+<td>number of modes</td>
+</tr>
+<tr class="even">
+<td>use_nonlinear</td>
+<td></td>
+<td>use nonlinear wave equation</td>
+</tr>
+<tr class="odd">
+<td>pre</td>
+<td></td>
+<td>precalculated constant</td>
+</tr>
+<tr class="even">
+<td>H</td>
+<td></td>
+<td>H matrix</td>
+</tr>
+<tr class="odd">
+<td>H_1</td>
+<td></td>
+<td>H_1 matrix</td>
+</tr>
+<tr class="even">
+<td>M_v</td>
+<td></td>
+<td>M_v matrix</td>
+</tr>
+<tr class="odd">
+<td>M_y</td>
+<td></td>
+<td>M_y matrix</td>
+</tr>
+<tr class="even">
+<td><strong>Returns</strong></td>
+<td><strong>ndarray</strong></td>
+<td><strong>state at timestep t and position x (u(x, t))</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Test the solver</p>
+<div id="cell-11" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> physmodjax.solver.generator <span class="im">import</span> (</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    Gaussian,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    generate_initial_condition,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-12" class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>length <span class="op">=</span> <span class="fl">0.65</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="fl">0.5188e-6</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> <span class="fl">0.141e-12</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>rho <span class="op">=</span> <span class="dv">1140</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> <span class="fl">5.4e9</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>d1 <span class="op">=</span> <span class="fl">8e-5</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>d3 <span class="op">=</span> <span class="fl">1.4e-5</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>Ts0 <span class="op">=</span> <span class="fl">60.97</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>n_gridpoints <span class="op">=</span> <span class="dv">101</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>n_max_modes <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>sr <span class="op">=</span> <span class="dv">96000</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>solver <span class="op">=</span> Wave1dSolverTensionModulated(</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    sampling_rate<span class="op">=</span>sr,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    final_time<span class="op">=</span><span class="fl">0.1</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    A<span class="op">=</span>A,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    I<span class="op">=</span>I,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    rho<span class="op">=</span>rho,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    E<span class="op">=</span>E,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    d1<span class="op">=</span>d1,</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    d3<span class="op">=</span>d3,</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    Ts0<span class="op">=</span>Ts0,</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    length<span class="op">=</span>length,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    n_gridpoints<span class="op">=</span>n_gridpoints,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    n_max_modes<span class="op">=</span>n_max_modes,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    use_nonlinear<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># d3=1e-7,</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co"># initial conditions</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>ic_max_amplitude <span class="op">=</span> <span class="fl">0.02</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>u0, v0 <span class="op">=</span> generate_initial_condition(</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    rng<span class="op">=</span>np.random.default_rng(<span class="dv">354</span>),</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    generator<span class="op">=</span>Gaussian(num_points<span class="op">=</span>n_gridpoints),</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    ic_max_amplitude<span class="op">=</span>ic_max_amplitude,</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    ic_amplitude_random<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>t, u, v <span class="op">=</span> solver.solve(u0, v0)</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"u shape: </span><span class="sc">{</span>u<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>dx: 0.006500000000000001 in meters
+dt: 1.0416666666666666e-05 in seconds
+number of points (n_gridpoints): (101,)
+time in samples (nt): (9600,)</code></pre>
+</div>
+</div>
+<div id="cell-13" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>n_samples_plot <span class="op">=</span> <span class="dv">7000</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">6</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].pcolormesh(solver.grid, t[<span class="op">-</span>n_samples_plot:], u[<span class="op">-</span>n_samples_plot:, :])</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"u"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">"x"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_ylabel(<span class="st">"t"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].pcolormesh(solver.grid, t[<span class="op">-</span>n_samples_plot:], v[<span class="op">-</span>n_samples_plot:, :])</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_title(<span class="st">"v"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"x"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_ylabel(<span class="st">"t"</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the solution at the endpoints</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>plt.plot(t, u[:, <span class="dv">0</span>], label<span class="op">=</span><span class="st">"left"</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>plt.plot(t, u[:, <span class="op">-</span><span class="dv">1</span>], label<span class="op">=</span><span class="st">"right"</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot FFT of the solution for a point on the string, in db scale</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> np.fft.rfftfreq(u.shape[<span class="op">-</span><span class="dv">1</span>], d<span class="op">=</span>solver.dt)</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>plt.plot(freq, <span class="dv">20</span> <span class="op">*</span> np.log10(np.<span class="bu">abs</span>(np.fft.rfft(u[<span class="dv">17</span>, :]))), label<span class="op">=</span><span class="st">"fft"</span>)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.figure(figsize=(10, 5))</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># freq = np.fft.rfftfreq(u.shape[0], d=solver.dt)</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.plot(freq, np.abs(np.fft.rfft(u[:, 17])), label="fft")</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.xlim(3000, 8000)</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">100</span>, <span class="dv">5000</span>)</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot spectrogram of the solution for a point on the string</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>plt.specgram(u[:, <span class="dv">17</span>], Fs<span class="op">=</span>solver.sampling_rate, NFFT<span class="op">=</span><span class="dv">2048</span>, noverlap<span class="op">=</span><span class="dv">1024</span>)</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">20000</span>)</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot FFT of the initial condition</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> np.fft.rfftfreq(u.shape[<span class="op">-</span><span class="dv">1</span>], d<span class="op">=</span>solver.dx)</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.plot(freq, np.abs(np.fft.rfft(u0)), label="fft")</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>plt.plot(np.<span class="bu">abs</span>(np.fft.rfft(u0)), label<span class="op">=</span><span class="st">"fft"</span>)</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.xlim(0, 1)</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the initial conditions</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>plt.plot(solver.grid, u0, label<span class="op">=</span><span class="st">"u0"</span>)</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>plt.plot(solver.grid, u[<span class="dv">0</span>, :], label<span class="op">=</span><span class="st">"u0_sol"</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the difference between the initial condition given and the one obtained from the solution</span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>plt.plot(solver.grid, u0 <span class="op">-</span> u[<span class="dv">0</span>], label<span class="op">=</span><span class="st">"u0 - u0_sol"</span>)</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="wave1d_solver_tensionmodulated_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="wave1d_solver_tensionmodulated_files/figure-html/cell-7-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="wave1d_solver_tensionmodulated_files/figure-html/cell-7-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="wave1d_solver_tensionmodulated_files/figure-html/cell-7-output-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="wave1d_solver_tensionmodulated_files/figure-html/cell-7-output-5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="wave1d_solver_tensionmodulated_files/figure-html/cell-7-output-6.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="wave1d_solver_tensionmodulated_files/figure-html/cell-7-output-7.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-14" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython <span class="im">import</span> display <span class="im">as</span> ipd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-15" class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Play the solution as audio</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ipd.Audio(u[:, <span class="dv">27</span>], rate<span class="op">=</span>solver.sampling_rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+
+                <audio controls="controls">
+                    <source src="data:audio/wav;base64,UklGRiRLAABXQVZFZm10IBAAAAABAAEAAHcBAADuAgACABAAZGF0YQBLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAwD9/+n/2/8GAI4AMgEvAaH/Q/wZ+HP1MPeX/1gPMyVAPtJWbmuMef9/736Od6lrMV3uTT8/EDLbJr4dmBYkERANCgrLBxkGzgTLA/4CWALSAWUBDwHOAJ0AeQBeAEcAMgAdAAYA6//O/73/w//g/xEAXADMAFwB4AEeAvUBfAHeADkAfP9z/gn9fvtg+kL6Vfsx/Qb/AwDe//v+SP6+/s8AJAScB8EJWQn0BS4Aifn982fxAfMF+Y4Cyw1nGBcgESNKII4XdglS9/HiV85bu1SrA5+7lpKSapLhlUCciqSsrca2Z7+Ox3LPMNeR3gzlEepu7XPv0fBV8qj0+PfA+/3+xwDAACX/nvwh+rf4Pfn9+2wAQQXhCPgJ6Qf7AkD8QfWw7/7sGO478+r7/wbfErQdvyWnKakopyIQGMAJ3vi95sTUOsQZtvSq96IGnumbXpwXn6qji6kssB63Kb5JxYnM19Pu2mXh2eYe61Xu1/AC8wb10PYd+Kr4bvi09/722fan92z5v/vv/Vj/s/8k/yT+Vv1Y/YT+uABZA4UFcwa7BXkDSgAe/eD6Ofpk+yj+5wG3BYkIbgnnBxkEy/4i+V70jfFi8Rv0d/mzAKoI+g9TFbQXmBb9EVQKaABC9Q/qE+CE2FrUIdTj1zXfXOmB9dkCwxC5HkAs1DjsQxFN+VObWCdb8ltRW3RZWVbiUf1LzES9PHw0wiwnJv4gRx2uGp8YjBYsFI4RBQ/9DNALowtNDFsNNQ5UDmkNbQujCI0FzALzAEYAmQBgAecBnAE3AML9h/oD99DznfEQ8abyffYy/NcCMwkSDpYQZBCpDfsILwMz/e/3MvSV8m7zvvYt/AQDRgrNEIEVkBeSFpkSHQzSA3761vB65wTfFdhc03fR0NJ61yrfQ+n+9IABBw7/GRYlMi9dOKhAC0haTjxTS1Y5V/hVwVIWTqpIQkN+PqM6jDfNNOYxfS50KvElRCHRHOoYwRVdE50RQxAAD4YNmAsTCQAGlQI7/3T80vrR+rL8XQBaBcoKlw+vEk8TNRGtDHoGpf9E+UH0M/FP8G3xJ/T291D8uwDMBB8ITQryCsIJoAa2AXr7pfQm7vjo+eXI5a3ok+4F9zQBCgxYFhsfqiW/KWgr7iq2KB8lbCC0Gu8TCAzxArn4ke3Y4RHW1crFwG+4TLKrrqitG6+Jsiq3C7xIwELDvsToxDnEUMPbwnbDmsWAyR7PJdYZ3mzmje709ST8rQA6A5EDqwHD/VT4G/L969nmaOMc4hbjLuYJ6y/xKPiL/wgHbA6OFUQcTiJLJ70qICwGKzkn0SA2GAcO+wLB9+XsyeKc2WLRC8p/w7W9sriStIOxu69ur8Kwu7M0uN29NcSaylrQ49Th11zZqdlS2fHYEtkY2jDcTt8v42rni+sj797xivMZ9KPzX/Kg8NXuee0K7fPtdPCU9Af6MgBBBk4Lng7ID8MO3AudB6cCmf32+Cr1f/Id8RPxUvK89Cv4cvxhAcEGPgxuEc8V2hgVGjAZGBYEEWYK0gLf+gvzuusx5ZzfG9vK18XVKNUV1qvYBd0s4w/rePQJ/0cKqBWcIJgqJjPxOdo++0GnQ05EZkRQRENEREQnRJpDP0LMPyU8azf6MU8s9CZjIvge4BwiHJ4cGx5LINQiUSVRJ2YoKShOJq4iWx2nFioPqgf3AMP7e/g799P31Pmz/N7/zgIbBXoGwQbuBSAEkwGb/pH7z/ij9kT10fRS9cb2KPly/JoAiQUFC68QBBZwGmIdaB48HdcZdBSJDa4Fhf2U9T/uwecz4pbd4NkM1yPVRtSt1JbWN9qr39/mje9D+W4DdQ3PFhcfEya2KxIwUjOsNV43pDi7Odo6LjzWPdo/IkJzRHBGrkfDR19GW0O+Pr04sTEQKmMiPxs6FdUQZg4ADm0PLRKSFdkYURt2HAUcABqkFl8SuQ1CCXgFtAIbAaMAIAFLAtoDhwUcB3cIhQk+CpoKigr3CcUI2wYuBMQAu/w8+IDzwO5A6kfmLONM4Qfhq+Jm5jns7vMb/SoHYxH/GkAjiymBLQYvQi6OK2MnSCK6HCUX1BHsDG4IOAQVAMz7K/cX8ojsj+ZN4OzZmNN0zZzHJsIuvdi4V7XpssuxMbI2tNe37LwjwwfKDtGr12bd6OEE5bLmDOdI5q/kjOIq4Mzdp9vo2bDYHNg+2CfZ3tpr3dXgJuVn6qHwz/fX/3wIXxEAGsohISh+LHku5i3YKqYl1B4CF8kOrgYN/xX40/Ez7AvnMuKC3efYX9T7z9nLHMjrxGnCtMDiv/+/CcHxwpTFwsg/zMrPJdMZ1nfYHdr22vjaLtq42NHWztQY0xvSMdKS00XWJ9rt3jfkoenP7nvzdvep+hD9s/6e/93/d/9x/tj8wPpP+Ln1PvMk8a3vEu9/7w/xyfOg93H8/QHwB94NVxPrFz8bDR0wHZ8bbhjSExUOlQe4AOT5avOK7WvoGeSN4LDdZ9uh2VvYqte518TYC9vG3hnkButn8+n8EgdTERYb0iMkK84wvDQAN8w3YzcUNiw08zGpL4Utuyt7Ku0pLypKKzItuS+VMmM1uDczOY85szitNqwz+C/fK7QnwCNAIFsdJRubGaQYExiuFzkXgBZdFbsTlxH5DvULowgfBYsBBv6w+qn3EfUF86Hx/vAw8UTyPfQT97H6/P7OA/8IXg6zE7sYKB2kINMiYyMWItAeoBnIErMK8QEi+d/wsen44+Xfe92N3NDc59123yjhwOIf5EDlOuY954XoWOr77KLwbfVZ+0IC7QkGEjIaFyJjKdEvMDVkOWU8QD4WPxc/dj5mPQ88ijrkOCI3QzVNM0oxTi9zLdcrkSqqKRgpuihbKLwnmybKJDEi3B71GsQWnxLjDucL8QksCaAJMwuuDcUQIBRjFzkaUhxrHVId6BsmGRwV9A/rCU8DefzB9YPvEeqx5Zfi4+Cc4LfhE+SD58vrp/DP9fn65f9gBE4IqguJDhERcxPaFWUYHhvzHb0gPCMqJUAmRiYaJbQiIx+HGgwV5g5GCFwBUvpE80vseuXf3pHYq9JTzbbIA8Vmwv/A3sD+wUPEeMdQy3HPetMP1+TZw9uN3Drc1tqA2GnV09EKzl/KKce1xEbDD8MrxKDGWsowz+jUPdvs4bboZe/Y9fj7vQEqB0AMABFiFVMZtBxdHyMh3CFoIbYfxhyqGIgTkA0BBxwAKflm8hHsWeZg4T3d9NmC19fV2tRw1HbUytRI1dDVRtaQ1p7WYdbQ1eXUnNP30fvPvs1eyw7JEcexxTrF5sXTx/3KOM891KzZH9805JroFeyI7u3vV/Dv7+ruge3y63PqLelC6MXnwuc+6Djpruqb7PjuuvHY9EP47PvD/7QDrQeZC14P4BL+FZQYdhp7G3cbRBrHF/UT1Q6HCEMBW/kv8S3px+Fl21vW5tIj0RXRo9Kk1d7ZCt/e5ArrQfE/98r8uAH2BX0JXQy1Dq4QdhI5FBoWLRh5GvQcjR8pIrAkCyctKQ4rsCwaLlYvbzBsMUsyBjOPM9UzyjNoM7IytTGJMEwvHi4gLWssCiz+KzAsfCysLIIsuysaKm8noiO1HscYFxL5CtMDFf0o92vyKe+K7ZntO+858kT2AfsOABcF0QkKDqIRkBTXFoQYpBlDGmkaFhpHGfsXLxbqEzQRHg66ChkHTANj/2T7WPdG8zbvMutJ55DjIOAY3Zvaz9jb1+TXBtlR28LeROOs6L/uO/Xa+1wCigg5Dk4Tuhd+G6YeSiGEI3UlPSf4KL4qniyfLr8w8TIhNTQ3CDl7Omc7pTsVO6E5Pzf6M/IvXCuBJrUhUB2mGfkWdBUnFQEW1RdiGlkdaSBHI7QlfyeLKMkoOCjkJt4kPCITH3obhRdJE9sOUQrDBUsBBP0F+Wb1OPKK72bt0evN6lvqd+oc6z/s2O3a7zny6fTj9x/7mf5OAj8GagrKDlQT9ReSHP8gCyV6KBErmCzkLNorcSmyJbogtxrnE5MMCgWg/Z32RvDI6kPmweI54JPeq91U3V3dlt3V3fXd3t2B3dfc5Nuv2j/Zm9fH1cPTjNEhz4jMy8kBx0zE0sHAv0K+fL2MvYS+ZsAsw8XGG8sU0JfVi9vb4XDoNe8P9uH8ggPJCYIPdxR0GE0b4hwlHRwc3xmaFoYS5w0CCR4Eev9H+6j3s/Rp8sPwqO/67pHuQO7a7THtIeyP6nDoyeWs4jzfoNsG2JfUetHMzqDMAcvxyWjJXMm/yYDKjsvczFzOBNDK0ajTltWM14HZats53eHeUuB64UnisOKn4iriQuEA4IXe/dye26XaUdrZ2mrcHt/34uLnt+049Bz7EQLECOMOKRRdGFobCh1tHY8ciBp+F5sTDw8JCrsEU//3+c/0+O+Q66/nauTU4fzf7t6r3jHfbuBH4pfkMufp6ZHsC+9A8S7z3/Rs9vn3rfmx+yH+EAF8BFIIbgyiELoUhRjXG44emSDzIawi4SK8InIiNyI/IrUitCNKJXMnHSorLXcw1jMbNxs6qzymPuw/YUDxP5I+QDwFOfM0KDDNKhElLB9WGcUTqg4tCmoGbwM+Ac7/Cv/c/in/2P/UAA4CewMWBdoGxQjVCgQNSg+aEecTHhYuGAQajBuzHGQdih0QHeAb6BkdF30TEg/3CVQEX/5V+HfyBe026DnkKeEV3/jdvt1G3mXf7eCz4o/kaOYw6OXpk+tN7SrvRvG78532//no/VYCQQePDB8SxxdYHaAicyepKycv2jG8M840HjW9NMIzSDJsMEgu+yufKVInMCVUI9chziBJIE8g3yDuIWojOCU4J0gpQisCLWkuWS+9L4kvty5LLVMr4ygXJgkj2B+cHGgZRRY1Ey8QJg0ICsQGTgOk/8v71vfk8x7ws+zW6bXndeYy5vXmvOh36wrvU/Mu+HH98gKKCBAOXhNNGLocgyCNI8ElESd4J/gmnyWCI7wgbh27GckVuhGvDcUJEgamAov/wvxM+iL4O/aM9ArzqfFe8B7v3+2X7D7ryekv6GXmX+QS4nHfc9wW2VnVR9HzzHvIBsTDv+a7pLgytr20aLRItWO3r7oUv2zEicoz0TLYSN895trs8PJa+AD91ADYAxYGoweYCBUJOAkcCdgIfQgUCJ4HGQd+BsgF7wTwA8wChAEeAKH+Ev13+9T5Kfhx9qX0u/Kl8Fbuwuvm6MLlYuLZ3kLbwNd51JbRO8+IzZTMaMz9zD7OC9A30pDU5NYF2cvaGdzc3A/dtdzZ243a5tj+1uzUzdK+0NzOSM0izI7LqsuVzGbOKdHh1IDZ7d795H3rLPLJ+BD/wQSqCaMNlBB1Ek4TNRNKErQQnQ4uDIwJ1QYfBHgB5v5o/Pv5mvdB9e3yn/BZ7iLsBeoN6EnmyuSh49/ilOLN4pTj7OTT5j/pH+xZ783yVvbN+Q399/9zAncE/wUXB84HQAiJCMkIIAmrCYcKyQuEDcEPhRLNFY4Zsx0iIrgmUCu/L90zgzeTOvM8lT50P5M//z7LPQw82zlRN4Q0hzFnLi4r4Cd/JAshhR3uGUwWqxIbD7YLlgjbBaYDEwI7AS8B8wGCA8oFrggHDKcPWxPyFj0aEx1VH+wgyyHxIWMhMCBrHiwcjRmoFpUTaRA1DQQK3gbFA7kAuf2/+sn32PTs8QvvO+yJ6QDnseSq4vngrt/U3nfeod5b363gn+I15XDoTOy98LD1CvumAFoG+AtNESwWcBr9HcIgwSIDJKAktyRqJN4jNiOOIgEiniFxIX4hxSFAIugisiOWJIolhSaDJ30ocilfKkYrJSz+LNAtmS5WLwEwkzADMUMxSDECMWMwXS/jLeorailiJtEivh41GkgVEBCpCjYF4P/O+in2GPK77izseeqp6bjpnOpC7JTuePHR9IT4dPyEAJwEpAiEDCsQhxOLFiwZXxseHWEeJR9mHyIfXR4cHWkbURnpFkgUiBHHDiMMugmiB+8FqgTUA2EDPQNNA20DdQM+A6ACdwGq/yP92/nX9Sjx6Os85k7gTNpm1MjOm8kBxRPB4r13u9S59LjSuGS5oLp/vPa++8GCxX3J2c190k/XMdwC4aPl9+no7WTxYvTh9uj4hfrL+9D8q/1z/jr/DADyAOsB8QL4A/IEzgV+BvIGHgf3BnUGkQVHBJQCeAD1/Q/70vdN9JXwwuzy6Ebl3+Hb3lXcZNoU2WrYX9jl2OLZM9uz3Dbekt+e4DfhQ+Gy4Hzfp91C22bYMtXO0WPOH8ssyLTF2cO1wlvC0cIVxBzG0MgazNrP8tNF2LXcK+GT5d3p/+3v8ar1Kflq/Gj/HwKJBKAGWwiyCZsKDwsIC4AKdgnrB+cFcgOcAHn9Hvqp9jfz6O/c7DDq/edY5k3l4eQP5c3lBuei6ITqieyT7oDwNvKe86z0XPWx9bv1kPVJ9QX14PT19Fj1GfZC99X4zvom/dL/wwLtBUIJtQw7EM0TZhcDG6EeQCLcJXAp8yxZMJEzhTYgOUc74jzdPSU+sj2APJQ6+zfKNBwxES3KKGskFyDtGwoYhxR2EecO4gxvC48KPwp3Ci4LVAzUDZoPjRGSE5AVchckGZkayButHEodpR3FHbQdex0hHawcHBxwG6AaoRllGN0W/BS2EgEQ2gxGCU0FAAF3/M33JfOh7mXqk+ZJ45/gp95s3fHcM90p3sXf9OGh5LTnFOuq7lvyE/a8+UX9nwDDA6oGUQm5C+gN4Q+rEU4TzhQxFnkXpxi9GboanBtjHA8doh0fHowe8h5bH9MfZyAlIRgiSSO9JHcmcCigKvgsYy/MMRg0LTbyN045LDp6Oiw6PDmqN3o1tjJtL7ErlCcrI4weyxn7FDAQegvsBpYCif7U+ov3vvR/8t3w5++m7x7wUPEy87T1wPg3/PX/0gOkB0QLiw5dEaMTUxVrFvYWAxerFggWNRVMFGUTkxLkEWIREhH2EAoRSRGsESkStxJHE84TOxR8FH8ULxR5E0kSkBBCDlgL0we5Axj/AvqQ9N7uCuk1437dAtjf0i3OAspvxoLDQ8G4v+C+tr4zv0jA58H6w2zGJskQzBTPG9IW1fXXsNpA3aXf4eH84//l9uft6fLrEe5T8L/yVfUR+Oj6yv2gAFUDygXmB44JqgopCwALKgqsCJMG9APtAKD9MvrJ9orzlvAG7u3rVeo96aDob+iX6P/ojekl6q3qCusl6+7qVepU6ejnFebj41/hm96q26LYmdWl0tjPRc35yv7IWscQxiPFksRaxH3E+cTPxQPHl8iPyvDMu8/w0ozWh9rT3l/jFejZ7I7xEvZH+gv+QgHXA7kF4AZMBwYHHwavBNICqABS/u77mfls93r1zfNs8lTxgfDn73zvNe8H7+nu1u7K7sPuwO7C7sju0+7i7vTuBe8V7x/vIu8e7xTvBe/47vLu/O4h72rv4++X8JDx2vJ79Hr23vio+9j+awJcBqEKLQ/tE84Yth2KIi0ngCtoL8oykDWpNws5szmkOeg4kDewNWIzwTDoLfMq/CcZJV0i1R+MHYYbxBlDGP4W8RUTFWEU1BNpEyAT+hL4Eh4TcBPzE6kUkxWxFv8XeBkSG8AcdR4eIKch/SIIJLYk8ySwJOIjgyKRIBEeDRuTF7YTjA8uC7UGOwLa/aj5u/Uk8vHuLOzZ6fvnkOaT5f/kzOTz5G/lOOZK56DoN+oM7BvuX/DT8m71KPjz+sP9hwAyA7IF+wcACroLJg1FDh4PvQ8wEIcQ1RArEZoRLxL0EvATJxWWFj0YFBoVHDwegSDhIlYl3id2Khctuy9YMuA0QTdoOT07qDyUPes9oD2mPPo6nzidNQQy5i1dKYUkeh9bGkkVYBC+C3oHrANkALH9mPsd+jz58Pgr+eD5/Ppr/Bn+7v/VAboDigU1B64I7AnqCqkLLQx8DKIMrAyoDKUMsQzaDCsNrQ1mDlkPhBDkEXETIBXjFqoYZBr7G1wdcR4nH2sfLB9cHvIc5xo6GO4UDhGmDMkHjQIN/WT3s/EZ7LTmoOH23MnYJ9UX0prPqs07zEHLp8pcykvKZMqXytnKJMt4y9jLS8zezJ3Nlc7Vz2fRVdOk1VXYZNvK3nfiW+Zd6mbuWvId9pX5q/xM/2gB+AL4A2wEXATWA+kCrQE2AJ3++fxe++L5kfh295f28vWD9UD1H/UR9Qr1+/Tb9KH0R/TK8ynzZfJ/8XrwV+8W7rXsL+uB6aLnjuU+47Dg5d3i2rDXXtT+0KnNdsqBx+TEtsIPwQDAlL/Uv7/AT8J7xDLHYMrxzcvR2NX/2SneQeIy5uvpXu1/8EXzqfWq90b5gvph++v7J/wf/N37a/vR+hr6Tfly+JD3rfbQ9fz0NvSD8+byYvL58azxevFi8WHxcfGM8arxwPHG8bHxePET8X3wte+97pntVuwB66zpa+hU53zm+OXd5TnmG+eJ6IfqE+0o8LjztPcI/J0AXAUqCu8OkRP6Fxcc2R80IyImoCiuKlAsjS1sLvUuMS8oL+EuYi6vLcwsvCuAKhopjCfZJQUkFiISIAMe9Rv0GQ4YVBbUFJ4TvRI+EicSehI3E1cUzxWRF4sZqRvUHfcf+yHMI1glkyZwJ+on/yeuJ/om6SWAJMQiuyBpHtIb+xjnFZwSIQ9+C8AH9AMrAHf86viY9ZDy4u+Z7bzrT+pS6cHolujH6EzpGuon62js1u1o7xXx2PKq9IP2Xfgy+vr7sP1M/8cAHwJPA1YENAXrBYEG/QZoB80HOAi4CFkJKAoyC4IMHw4PEFQS8BTcFxEbhR4pIusluCl5LRcxezSMNzU6YTz/PQI/YD8WPyM+jjxgOqk3eDTkMAQt7yi/JI0gcByAGM4UbBFkDsALggmtBzwGKgVvBAEE1QPgAxQEZQTHBC0FjAXcBRQGLwYsBgoGzwWCBS4F3wSlBI4EqgQHBbIFswYQCMoJ3As/DuUQvBOwFqYZhRwwH4whgCP0JNclGia3Jawk/yK5IOsdpRr/Fg8T7A6tCmcGLAIN/hL6RPal8jfv9eva6N7l++Io4GDdoNro1zrVnNIb0MPNpcvSyV3IVsfKxsXGS8dcyPPJBcyFzmDRgNTP1zjbpN4A4jzlS+gj677tGvA28hP0tfUd91D4UPke+rz6LPtu+4b7dftA++z6f/oB+nv59/h++Bn40Pen96P3wvcD+GD40fhL+cH5Jvpq+oD6WPrm+R/5+Pdr9nf0GvJb70Hs2egz5WHheN2N2bjVDdKjzorL1MiNxsDEcsOmwl3CksJAw1/E5sXKxwHKfsw2zxzSJdVE2G3blN6s4avkhOcs6pvsx+6q8EDyh/N+9Cj1i/Wu9Zv1XPX+9I70GvSu81fzHvMJ8x7zW/O/80P03fSB9SH2sPYd91z3Yfch95b2vvWZ9CzzgPGh753tiOtz6XLnmuX+467iuuEt4RDhZ+E04nLjHeUs55PpR+w671/yq/UT+Y38EACZAyIHqQopDp8RBxVbGJIbpB6FISkkhCaLKDIqcStELKgsnywuLF4rOirPKCwnYSV7I4ohnB+9HfgbWBrlGKYXoRbcFVsVIBUtFYMVIBYCFyMYfRkIG7gcgx5aIC8i9COZJRAnSyg/KeIpKyoXKqEpyyiVJwMmHCTmIWkfrRy9GaMWZxMWELgMWQkDBsACm/+c/M75Ovfm9NvyHvGz75zu2+1u7VLthO3+7bjuqu/L8A/ybfPX9EL2ovfs+Bf6Gfvs+438/Pw6/U79QP0c/fD8y/y+/Nj8K/3F/bL++/+oAb0DOAYVCUwM0w+cE5cXshvaH/oj/ifSK2IvnDJwNc83rjkEO847CDy1O9o6fzmwN3o17jIeMB4tASrcJsIjxiD2HWEbDhkDF0EVxROIEoERoxDhDy4Pew69DecM9AvdCqEJRAjLBkAFsQMsAsMAif+P/uj9ov3J/WT+eP8BAfoCVwUGCPUKDQ42EVcUWhcnGq0c2x6nIAoiAiOQI7ojiSMFIzkiLyHuH30e4BwYGycZCBe6FDcSfQ+JDFsJ8gVUAob+kPp89lXyKu4H6vvlEuJa3t/arNfJ1D/SE9BJzuPM5MtJyxLLO8vAy53Mzc1IzwnRBtM51ZbXFdqr3Ezf7eGD5ALnYOmT65PtWO/f8CTyJ/Pr83L0xfTs9PH03/TE9Kv0ofSx9OP0PvXI9YD2ZPdw+Jv52voh/GH9jP6U/2oAAgFQAUwB7gAxABT/lf24+4L5+vYn9BTxzO1b6s3mL+OO3/jbetgh1frRFM95zDXKU8jcxtXFQ8UoxYLFTsaExxzJCcs/za/PSNL61LTXZtoA3XTft+HA44jlDudS6FfpI+rB6jzrn+v461Tsv+xD7eftr+6e76/w3vEh82v0sPXg9u/3z/h0+df58/nE+Uz5j/iS9132+/Rz89HxHvBj7qjs9upT6cXnU+YC5dnj3OIT4oLhMeEk4WHh7eHL4vzjg+Ve54vpBezI7szxCfV1+AX8r/9mAyAH0QpuDuwRQRViGEcb5h06IDsi5SMzJSQmuSbzJtYmaCaxJbkkiyMzIr4gNh+rHSgcuRprGUcYVhehFi0W/RUSFm4WDRfrFwEZShq8G00d8x6jIFMi9yOGJfQmOihPKSsqyCoiKzQr/Cp2KqMpgSgSJ1clUyMLIYQewxvRGLgVgRI4D+kLpAh0BWgCj//y/Jz6l/jn9pD1kvTp85Dzf/Ot8w70lfQ29eT1k/Y498n3PPiN+Lf4t/iO+D74zPc+95729fVQ9bv0RfT78+vzI/Su9Jb14/aZ+Lr6Rf00AIEDIAcECxwPVxOgF+QbDSAHJL0nHSsXLp4wqjIzNDk1vzXMNWo1pjSRMz0yuzAdL3Yt0ytCKswodSc/JiclJiQ0I0QiSSE3IAIfnx0HHDcaMBj1FY4TCBFvDtMLRwnZBp0EnwLtAJP/lf74/b794v1i/jX/UgCxAUcDCgXwBvEIAwsgDUAPXxF2E4IVfhdkGTIb4xxxHtcfECEWIuQicyO9I78jdCPYIughpSAOHyQd6xpmGJsVjxJKD9ELLAhjBH0AhPx++HT0b/B47Jro3eRN4fLd2NoH2IrVZ9On0U3QX8/czsTOFM/Hz9PQMNLP06XVode02dDb5t3q38/hj+Mh5YTmtue56JDpQurV6lHrvesk7Izs/ex+7RXux+6X74jwm/HP8iH0j/US96b4Qvre+3H98f5VAJMBowJ5Aw8EXQRbBAQEUwNEAtYACf/d/Fb6e/dU9OvwTu2N6bfl4uEf3oPaIdcK1FDR/M4aza7LuMo1yh/KbMoPy/rLHs1sztXPTNHF0jbUmdXp1iTYS9lf2mXbYdxZ3VLeUd9a4HDhluLN4xXlbObQ50DpuOoz7K/tJu+T8PLxPvNy9In1fvZM9+/3ZPio+Lj4lPg6+Kv36fb39db0jfMg8pTw8e497YDrw+kN6Gjm2+Rv4yziGeE/4KTfTN8/33/fEeD14C7iuuOY5cXnPOr47PLvIfN89vn5jP0qAcYEVAjICxYPMRIPFagX8xnrG4wd1B7FH2AgqyCsIGsg8B9HH3kekB2XHJcbmxqrGc8YDRhsF/AWnhZ4FoIWvBYpF8cXlhiUGb8aExyKHR0fxiB8IjUk5iWEJwQpWip8K2As/CxKLUQt5iwuLB4rtyn9J/clrSMnIXAekxudGJoVlxKgD8IMBwp7ByYFDwM5Aar/Xv5X/Y78APyk+3L7YPtk+3T7g/uJ+3v7UPsC+4v65/kW+Rf48Pan9Ub02PJs8RLw2+7Z7R3tuey77C7tG+6E72rxyPOU9sH5P/37AOAE2gjTDLcQdBT6Fz0bMx7XICcjJCXUJj0oaClfKior1CtkLOIsUS20LQwuVi6PLrIuuS6dLlgu4y05LVYsNyvcKUcoeSZ4JEoi9x+HHQMbdBjjFVkT3xB8DjgMGgonCGQG1QR/A2UCiAHqAIwAbwCTAPcAmQF4Ao8D3QRbBgYI1wnHC88N6A8KEi4USxZaGFUaNRz0HY4f/CA8IkgjHSS2JBAlJiX0JHckqiOJIhQhRx8jHaga2xe+FFkRsw3WCc0FpAFq/Sv59fTY8OLsH+md5WXigd/43M7aBtmi153W9dWi1Z/V4dVe1gzX4tfT2NfZ5tr22wPdBt793uXfvOCC4Tni4OJ84wzkluQa5Z/lJua25lLn/+fE6KTppurN6x3tme5A8BPyDPQm9lj4l/rX/An/HAECA6oEBgYHB6MH0geNB9QGpwUKBAcCqP/4/Ab64vac80Tw6eyb6WfmWON54NLdaNtB2V3XvdVg1ELTYdK30UDR9tDU0NXQ89As0XvR3NFN0s3SW9P005vUT9UR1uLWw9e22LzZ1doC3EPdmN7/33nhAuOY5Djm3+eJ6THr0+xq7vHvY/G78vPzCPX19bb2Sfeq99n30/ea9yz3iva39bX0hvMu8rPwGO9k7Z3rzen55y3mceTP4lLhA+Dr3hXeiN1K3WHd0N2a3r7fO+EL4yvlkec36hPtGvBC84D2yfkT/VIAfgOOBnkJNwzDDhYRLBMCFZcW6Rf4GMYZVRqoGsQarxpsGgQafRngGDMYgBfOFigWlBUcFcYUmhSdFNQUQhXpFckW4BcqGaMaRBwFHt0fwSGmI4ElSCfuKGkqsSu7LIAt+y0nLgEuiC29LKArNiqEKJAmZCQHIoYf7BxFGp4XBRWFEiwQAg4RDF8K8AjDB9cGJQanBVAFFQXnBLgEeQQcBJYD3ALoAbcASv+i/cj7xfmn9371WPNH8V3vqe077B/rXuoB6grqe+pQ64XsEe7s7wryX/Tg9oL5OPz7/r8BgQQ6B+UJgQwLD4QR6hNAFoUYuhrfHPMe9yDoIsQkiSYyKL0pJitpLIMtcC4tL7gvDjAuMBYwxi88L3ougC1PLOgqTymHJ5MleSM+IekefxwKGpAXGRWuElYQGg4ADA4KSgi4Bl4FPARWA6wCPgIMAhQCVgLNAnoDVwRkBZ0G/geGCTAL+QzeDtoQ6RIGFSsXUxl1G4odih9rISQjqiTzJfUmpycBKPsnkSe/JoQl4iPbIXYfuxyxGWUW4RIzD2cLiQelA8n//ftM+L/0XfEu7jfrfugF5tHj4+E84N3ew93t3Fjc/tvb2+fbG9xv3NncUN3M3UTest4Q31nfi9+n36/fp9+V34Dfct9z347fy98z4M7gouG04gXkl+Vm53DpresU7p3wOfPe9X34Cftz/a//rwFsA9kE8QWtBgwHCwesBvIF4gSCA9kB8v/U/Yn7HPmV9gD0ZPHL7jzsv+lY5w7l5OLe4PzeQN2r2zza8djJ18PW3NUT1WbU09NZ0/jSrtJ80mLSYdJ50qvS+NJh0+bTiNRG1SDWFtcm2FDZkdrp21Td095i4P/hqONZ5RHny+iD6jbs3u127/nwYPKm88b0ufV79gf3Wvdw90f34PY69lj1PPTs8m7xx+8B7iXsO+pO6Grml+Tg4k7h69+/3tHdJd3C3Knc3txf3S3eR9+o4E3iMuRS5qfoKuvU7Z7wgPNx9mn5YPxL/yEC2wRxB9oJEQwPDtAPUhGTEpQTVhTcFCsVRxU4FQMVshRLFNgTXxPqEoESKhLtEdAR2REOEnMSCxPXE9kUERZ8FxYZ2xrDHMYe2iDyIgMl/ybYKIEq7SsRLeQtXi57LjkunC2mLGEr1ikSKCEmEyT2IdkfyR3RG/4ZVRjcFpYVgRScE98SRBLBEUoR1hBXEMQPEg85DjMN/AuSCvcILAc5BSMD9AC2/nL8NPoF+O/1+/My8prwOu8U7i3thuwh7PzrGOxx7AXt0e3S7gXwZPHs8pr0aPZU+Fr6dvym/uUAMwONBe8HWArHDDgPqhEbFIgW7hhLG5wd3R8KIiAkGSbyJ6YpMCuLLLUtpy5gL9svFjARMMkvQS94LnItMyy+KhopSydZJUsjJyH0HrkcfBpDGBIW7xPdEd8P+Q0tDH4K7wiDBz0GIAUwBHED5wKWAoICrgIcA80DwgT5BW8HIQkHCxwNVw+vERsUjxYBGWgbtx3lH+khuSNNJZ4mpSdcKMAozCh/KNYn0iZzJb0jsyFZH7Yc0Rm0FmcT9g9sDNQIOwWtATb+4Pq097z0/vGA70TtTeuY6STo7Obr5Rnlb+Tk43DjCeOo4kfi3uFq4efgVeC13wjfU96b3encQtyw2zvb69rH2tfaINum22zcdN2+3kbgC+IH5DPmiOj96ojtHvC28kT1vvcY+kr8Sf4OAJMB0wLJA3QE0wTnBLIEOAR8A4QCVQH3/27+wPz0+g/5GPcT9Qbz9fDj7tbsz+rT6OTmBeU343zh199I3tDccdsq2vzY6Nft1gzWRdWX1ALUiNMm09/SstKg0qnSztIQ03HT8dOS1FXVOtZB12zYudko27bcYN4k4Pzh5OPV5cnnuOmb62vtIO+z8B7yWvNj9DX1zPUm9kL2IfbE9Sv1W/RY8yXyyPBI76rt9usz6mrooubl5DvjrOFB4ALf990l3ZLcQ9w83H7cCt3f3fveW+D74dXj4+Ue6IDqAe2Z70Hy8PSh90r65vxs/9YBHgQ/BjII8wl9C88M5Q3ADl8PxA/0D/QPyQ97DxUPoQ4pDroNXw0jDRENMQ2NDSgOBw8pEI4RLxMHFQwXMxlwG7Qd8h8bIiIk+iWYJ/QoCCrOKkcrcytWK/gqXyqVKaQolyd3Jk8lKCQII/Yh9yAMIDgfeB7MHS8dnxwUHIsb/BpiGrcZ9RgZGB0XABa+FFgTzREgEFIOZgxiCksIJQb2A8YBmv94/Wb7avmJ98j1LPS38m7xU/Bn763uJO7N7aftse3q7U/u4O6a73zwgvGt8vrzZ/X19qP4cPpb/GP+iADKAiUFmQchCroMYA8NErsUZBcCGo4cAR9UIYIjhiVbJ/4oaiqgK5wsYC3rLT4uWi5CLvYteS3MLPEr6iq4KV0o3CY2JW4jiCGGH20dQhsKGcsWjBRSEiUQDA4ODDEKfAj2BqQFigStAxADtwKiAtICSQMDBAAFPQa3B2gJSwtbDZAP4hFKFL0WMxmhG/0dPCBTIjgk4CVEJ1koGSl+KYUpKylwKFYn4CUVJPwhnR8CHTgaSBdAFCoREw4ECwgIJgVmAs7/X/0e+wn5IPdh9cjzUPL08K/veu5P7SrsBevc6avocucu5uHkjOMy4tjghN873gXd6Nvt2hrad9kI2dTY3tgp2bbZhNqT2+DcZ94i4AziHeRO5pjo8epS7bLvCfJP9H32i/h1+jT8xP0h/0gAOAHvAW0CsQK8ApACLwKbAdcA5//N/o39LPyu+hf5bPey9e3zIPJR8ILut+zy6jbphOfd5UHksuIv4bnfT97x3KDbXNom2QDY6tbo1fzUKdRx09nSYtIQ0ubR5dEP0mXS6NKZ03XUfNWs1gPYfdkW28zcmd544GPiVuRI5jXoFeri65XtJu+R8M/x2/Kx8030rfTQ9LT0XPTJ8/7yAfLW8IPvEO6C7OPqOumO5+flTeTH4lvhEODr3vLdKt2W3DrcGtw43JXcM90T3jTflOAy4grkGOZW6LzqQ+3h743yO/Xg93L65fwv/0UBIwPABBoGLwf/B40I3wj8CO4Ivgh5CCsI4AejB4EHgwexBxMIqwh9CYgKywtADeIOqhCPEogUihaMGIUaahw1Ht0fXSGwItQjxiSHJRgmfCa2JsomvyaYJlwmECa5JVwl/CSdJEAk6COVI0Yj+iKwImYiGCLDIWQh9iB3IOIfNB9qHoAddhxKG/sZiRj3FkQVdhOOEZIPhg1vC1EJMwcZBQcDAgEP/y79Y/uw+Rb4mPY19e/zxvK88dHwBvBe79rue+5F7jnuWu6o7ifv1++48MzxEfOF9Cj29vft+Qf8Qv6YAAYDhgUSCKgKQQ3YD2sS9BRvF9oZLxxsHo4gkCJxJCsmviclKV4qZis7LNssRC12LW8tMC25LAssJysQKsgoVCe1JfEjCyIJIPAdxBuLGUoXCRXMEpsQfA51DI4KzQg6B9oFtATPAy8D1wLNAhADogODBK8FIwfYCMoK7gw9D6sRLhS5FkEZuhsXHk4gVCIeJKQl3ybKJ2AonyiIKBsoXCdPJvwkaCOdIaMfhB1JG/oYoRZFFO8Row9mDTwLKAkqB0IFbgOtAfz/Vf63/Bz7gfnj9z/2kfTZ8hbxSO9x7ZPrsenP5/LlH+Rd4rHgId+z3W7cVttw2sDZSNkM2Q3ZSdnD2XfaZNuH3NzdX98M4dzizOTU5u7oFOs/7WjvifGb85f1ePc4+dL6QvyE/Zb+d/8kAKAA6QADAe4ArQBDALT/Af8u/j/9NvwW++H5mvhD9931a/Tu8mbx1u8/7qLsAOta6bPnC+Zk5L/iIOGG3/XdcNz32o/ZOtj61tTVydTf0xfTdtL+0bLRldGp0e/RaNIU0/PTAtU+1qbXM9ng2qnchd5v4F7iTOQy5gjoyOls6+/sTO6A74fwX/EG8nzyv/LQ8q/yXfLa8SrxTPBF7xjux+xY69DpNOiM5uDkN+Ob4RXgr95y3WbcldsF273awdoT27Xbptzi3WXfKOEi40rllef36Wbs1O438YPzsPWz94j5KfuS/MT9vv6F/xsAiQDUAAYBJgE+AVYBdwGpAfIBWALhAo4DYgRdBX4GwwcoCaoKQwztDaQPYBEbE9EUehYTGJcZARtPHIAdkR6CH1QgCCGgIR8iiCLeIiYjYiOXI8Yj8yMgJEwkeiSnJNMk+yQeJTglRiVFJTIlCCXHJGsk8iNcI6ci1CHiINMfqB5iHQMcjhoDGWYXuBX7EzESXBB9DpYMqQq4CMMGzgTbAusABP8k/VL7kPni90v2zvRx8zTyHfEt8Gjvzu5h7iTuFu447ovuDe+/75/wrvHo8k703PWS9235afuF/bz/CwJvBOQGZgnvC3wOBxGNEwkWdRjPGhIdOh9DISoj7CSGJvUnNylJKior2CtRLJMsnyxyLA0sbyuZKowpSSjTJiwlWCNbITwf/hyqGkcY3RV0ExYRyw6eDJgKwQgjB8QFrQTiA2cDQANtA+4DwQThBUkH8QjTCuIMFw9kEb8THBZxGLEa0hzMHpUgJiJ7I44kXCXmJSomKybsJXElvyTcI80imiFIIN0eYB3VG0EapxgLF20V0RM1EpkQ/Q5fDb4LFwppCLIG8QQjA0kBYv9t/Wr7W/lB9x719PLH8JnubuxM6jboMuZE5HPiwuA439ndqtyu2+raX9oQ2v7ZKdqP2i/bB9wS3U3es98/4eviseSL5nPoY+pV7EPuKPD/8cTzcvUG93z40/kH+xf8A/3J/Wj+4f41/2P/bv9W/xz/w/5L/rj9Cv1D/Gb7cvpr+VH4JPfl9ZX0NfPE8ULwse4R7WLrp+nh5xLmPuRo4pXgyN4H3VbbvNk92N7WpNWT1K7T+NJ00iLSA9IX0lzS0tJ200bUPdVb1prX99hu2vzbnN1L3wThwuKC5D3m8OeV6SXrnez07SfvL/AI8avxFvJE8jXy5vFY8Y3wiO9O7uTsVOuk6d/nEOZC5IDi1eBN3/Hdytzg2znb2drC2vXacNsw3DHda97Y327hJ+P35Nbmuuic6nLsN+7j73Lx4PIr9FH1VPYz9/P3lvgi+Zv5Bvpr+s76Nvuo+yr8v/xs/TP+Fv8TAC4BYwKwAxEFhAYECIwJGAukDCsOqg8cEYES1RMYFUkWZxd0GHEZXho+GxIc3ByeHVkeDh+/H2sgEyG2IVQi6yJ7IwIkfyTvJFMlpyXsJR8mQCZOJkcmLCb7JbQlVyXiJFUksCPzIhwiLCEjIAAfwx1uHAEbfRniFzMWcRSeErwQzg7VDNYK0QjLBsUExALJANr+9/wk+2T5u/cr9rj0ZfMz8ibxQfCF7/Xuku5e7lruh+7k7nLvMPAe8TnygPPx9Ir2R/gl+iP8O/5qAK4CAwVmB9IJRQy7DjARohMNFm0Yvhr9HCYfNiEmI/UknCYYKGUpfSpeKwMsaSyOLG8sDCxjK3YqRynZJy8mTyQ/Igcgrx0/G8IYQxbKE2URGw/5DAcLTwnXB6cGwgUtBegE9ARPBfUF4gYOCHMJBwvDDJwOiRCAEngUaBZJGBIavhtHHage3x/oIMQhcCLuIj8jZCNgIzUj5iJ3IuohQyGEILEfyx7WHdIcwhulGn4ZSxgMF8EVaBQAE4kRABBkDrQM7goTCSEHGgX+As4Ajf48/OD5e/cS9aryR/Dw7ajrdulf52jllePr4W7gIt8J3iXdedwE3Mjbw9v121zc9tzA3bbe1d8Y4Xzi+uOP5TTn5Oia6lLsBe6v703x2/JU9Lf1Avcz+Er5Rfok++n7k/wj/Zr99/08/mj+e/50/lT+Gf7D/U/9vvwO/D37Tfo9+Q34vvZR9cnzKPJy8Kju0Ozu6gbpHOc05VPjfuG33wLeZNze2nTZJ9j71vHVDNVM1LTTRtMC0+vSAtNH07zTYdQ11TjWaNfC2ELa5duk3XrfX+FM4zjlGufq6J7qL+yU7cbuv+968PTwK/Ee8c7wPvBy72/uPe3i62jq2Og755vlA+R84g/hxN+j3rLd9txy3CjcGtxG3KncQd0J3vveEeBD4Yzi4+NB5aHm/OdM6Y3qvevY7N3tzO6l72vwIPHH8WTy+vKN8yH0u/Rd9Qr2xfaQ92v4V/lU+mL7f/yq/eH+IABpAbcCCQRcBbAGAghRCZwK4wskDV8OlA/DEOsRDRMpFD4VTRZWF1kYVhlMGj0bKBwMHeodwR6SH1sgHSHWIYYiLSPJI1ok3iRVJbwlFCZbJo8mrya7JrEmkSZYJgcmnSUYJXokwSPuIgAi9yDUH5geQx3VG1AatRgEF0EVaxOGEZIPkw2LC3wJagdZBUoDQwFH/1j9e/uz+QX4c/YB9bHzhvKD8anw+e917x3v8+727iXvge8I8LrwlfGZ8sXzFfWL9iP43Pm1+6z9wP/sATIEjQb8CHoLBQ6YEC8TxRVVGNkaSh2jH9sh7SPRJYEn9ygsKhsrwisbLCcs4ytSK3QqTynmJ0EmZiRdIjEg6x2VGzkZ4RaZFGgSWhB0DsAMQgsACv4IPQjAB4YHjQfTB1QIDAn1CQoLRAydDQ0PjRAXEqQTLhWvFiIYghnLGvobDR0DHtkekB8oIKEg/iA/IWYhdSFuIVIhIiHhII4gKiC2HzAfmh7xHTUdZBx+G4AaaRk5GO0WhhUCFGESpBDKDtYMxwqgCGIGEQSwAUH/yPxJ+sj3S/XW8m7wGO7a67jpt+fd5S3kq+Jb4T/gWN+o3i/e7N3e3QLeVt7X3oHfT+A+4UnibOOi5OjlOueV6PXpWOu77B3ufO/W8Cryd/O79PX1JPdF+Ff5WfpH+yH84vyK/Rb+hP7R/v7+CP/u/rD+T/7K/SP9W/xy+2z6SfkM+Lf2S/XL8zjylfDj7iXtXOuL6bPn2OX84yPiUOCH3s3cJtuX2SXY1das1bDU5NNM0+zSxtLc0i/TvtOH1InVvtYj2LHZYtst3Qvf8uDa4rnkh+Y66MrpMOtl7GTtKe6w7vruBO/S7mfuxe307Pnr2+qj6VnoBuey5WXkJ+MA4vXgDeBK37DeQd793eTd9d0s3obeAN+V30Dg/uDK4Z7ieeNV5DHlCebd5qrncegx6evpoOpQ6/3rqOxT7QDusO5k7x7w3/Cn8XnyVPM49Cb1HvYg9yr4PvlZ+nz7pfzU/Qf/PQB2AbIC7gMqBWUGnwfXCAwKPwtuDJoNwg7nDwkRJhJBE1gUbBV8FooXkxiZGZsamRuRHIQdcR5WHzQgCSHUIZUiSSPyI40kGiWXJQQmYCapJuAmAicPJwYn5SasJlom7SVlJcIkASQkIyoiEiHdH4weHh2WG/UZOxhsFokUlRKUEIcOdAxcCkQILwYhBB4CKQBG/nb8vvof+Zz3N/bx9MzzyPLn8SjxjvAY8Mbvmu+U77Xv/u9v8Arx0fHD8uLzL/Wq9lP4KPoq/Fb+qAAfA7UFZQgpC/sN0xCqE3cWMhnTG1EepSDGIq4kVya8J9goqSksKmEqSCrlKTkpSigbJ7UlHiReIn0ggx57HGwaYBhfFnEUnhLsEGIPBQ7YDN8LGwuOCjgKFgooCmkK1wptCycMAA3zDfoOERAzEVwShxOxFNYV8xYGGA4ZCBrzGs8bmhxVHf8dmB4hH5kfACBXIJ4g1SD8IBIhFiEJIekgtSBtIA4gmB8IH10elR2uHKgbgBo1GccXNhaBFKkSsBCXDmAMEAqpBzAFqQIaAIj99/pu+PL1iPM18f/u6Oz26irph+cQ5sXkpuO04u/hVeHl4J7gfuCD4K3g+OBk4e7hleJX4zPkJ+Uw5k7nfei76QXrWuy27Rbvd/DW8S/zgPTG9f32JPg4+Tf6IPvx+6j8Rf3I/S/+ev6q/r7+tf6P/k3+7f1w/dX8G/xC+0r6Mvn796X2MPWe8+/xJ/BI7lTsUepC6CzmFeQD4v3fCN4s3HDa2dhu1zXWM9Vs1OTTm9OU087TSNT/1O/VEtdj2NrZcNsb3dPej+BG4u/jgeX25kfobell6ivrvusc7EjsQewM7KzrJet+6rzp5Oj+5w/nHeYu5Ubka+Of4ujhR+G+4E7g+d+935vfkd+e38Hf998/4Jbg+eBo4eHhYOLm4nDj/eOM5B7lseVF5tvmcucL6KboRenn6Y7qOuvt66XsZe0t7v3u1O+08J3xjfKF84T0i/WX9qr3wfjd+fz6H/xF/W3+lv/AAOwBGQNFBHMFoAbNB/kIJgpRC3wMpg3PDvYPHBFAEmITghSeFbcWzRffGOwZ9Rr4G/Yc7R3eHscfqCCBIVEiFyPRI4AkIiW1JTgmqiYJJ1MnhyeiJ6QniidSJ/wmhybwJTglXyRkI0kiDyG2H0EesRwKG08ZgRekFbwTyhHTD9oN4AvpCfYHCgYnBE0CfwC+/gv9ZvvS+U/44PaG9UT0G/MO8iDxVPCu7zDv3e667snuDe+I7zzwKfFS8rXzUfUl9y35Z/vN/VkACAPRBa0IlAt9DmERNxT2FpYZDxxZHm4gRyLhIzYlQyYIJ4QntieiJ0onsibgJdgkoSNDIsUgLh+GHdQbIBpwGMwWORW9E1wSGxH8DwIPLw6EDQINpwx1DGcMfgy3DA8Ngw0RDrUOaw8xEAQR4BHDEqkTkRR5FV4WPxcbGPAYwBmIGkgbAhyzHF4dAR6dHjAfux89ILMgHiF6IcUh/iEhIisiGiLqIZkhJSGKIMkf3h7KHYwcJRuXGeIXCxYSFP0RzQ+JDTML0AhkBvQDgwEW/7D8VfoH+Mv1o/OS8Zrvvu3/62Dq4uiH51DmPuVT5I/j8uJ94i/iCeIJ4i7ieOLk4nHjG+Ti5MHlt+bA59no/+kw62jspe3k7iPwX/GX8snz8vQT9ij3Mvgw+R/6//rQ+4/8O/3T/Vb+wf4S/0f/Xv9V/yn/2P5g/r/98/z9+9r6jPkU+HP2rPTD8rzwne5q7Czq6eep5XPjUeFJ32PdptsZ2sDYode/1hzWuNWV1a/VBNaR1lDXPdhP2YDaytsk3Yfe699K4Z3i3eMG5RPmAOfL53Ho8uhO6YXpmOmK6V7pFem16EDouuco54zm7OVJ5ankDeR44+3ibuL84ZjhQ+H+4MjgouCL4ILgh+CY4LXg3eAO4UjhiuHT4SPieeLV4jbjnOMI5Hjk7+Rr5e3lduYE55rnNuja6IXpN+rx6rLre+xL7SHu/+7j783wvvG08q/zsPS19b/2zfff+PX5Dvsr/Ev9bf6S/7kA4gENAzkEZwWVBsIH8AgdCkkLcwybDcIO5g8IESgSRhNiFHwVlRasF8IY2BnsGv4bDx0dHicfLSAtISQiEiPzI8YkiCU2Js4mTie0J/0nKCg0KCAo6ieTJxwnhCbMJfckBCT3ItAhkSA9H9UdXBzSGjoZlBfjFSgUYxKVEMEO5QwFCx8JNgdMBWADdgGQ/6/91vsJ+kv4n/YL9ZLzOPID8ffvGO9r7vTtt+227fXtde437zvwgPEF88b0wPbu+Er7z/1zADEDAQbZCLILgg5CEeoTcRbSGAUbBh3PHl4griHAIpEjIiR0JIkkZCQIJHojvyLbIdQgsB90HigdzxtyGhQZvBduFi8VAxTtEvERERFNEKkPIw+8DnMOSA45DkMOZQ6dDukORg+yDyoQrxA9EdMRcRIWE8ETcxQqFegVqxZ0F0MYFxnwGcwaqhuJHGcdQR4UH98fniBOIeshdCLkIjkjcCOGI3sjSyP2Insi2SEPIR8gCR/OHW8c7hpNGY0XshW9E7IRkg9iDSML2giJBjME3AGI/zj98fq3+Iv2c/Rw8obwt+4G7XbrCeq/6JvnnebH5RjlkOQu5PHj2ePj4w7kV+S95Dzl0+V/5j7nDejr6NbpzOrL69Ps4u337hLwMvFW8n3zp/TR9fv2I/hH+WT6dvt8/HH9Uf4Z/8T/TACwAOsA+ADWAIEA+f87/0j+IP3G+z36h/ir9q30k/Jm8Cvu6uus6XjnVuVN42Phn98F3pzcZdtk2prZB9mr2ITYkNjM2DPZwtly2kDbJNwa3RveIt8q4C3hKOIV4/HjueRr5QTmhebr5jjna+eF54nnd+dR5xvn1eaE5ijmxOVc5fDkhOQZ5LDjS+Ps4pPiQuL44bfhf+FP4SjhCuH14Ong5eDp4PXgCOEj4UbhcOGi4dvhG+Jj4rLiCeNn483jOuSv5CzlsOU75s3mZ+cH6K7oW+kP6srqi+tS7CDt9O3P7rDvmPCH8X3yefN89IT1kvam97742vn5+hr8Pf1h/oT/pgDIAekCCAQlBUEGWwd1CI8JqQrEC+IMAg4mD04QexGsEuETHBVZFpoX3BgeGl8bnBzUHQQfKSBCIUwiRCMpJPkksSVQJtYmQCeOJ78n1SfNJ6onaycSJ54mESZtJbEk3yP4Ivwh7CDJH5IeSR3sG30a+xhmF74VAxQ2ElcQaA5oDFoKQQgeBvYDywGi/3/9Z/tg+W/3mfXl81ny+fDL79TuGO6a7V7tZe2w7UDuFO8q8IDxEvPc9Nn2BPlV+8f9UQDuApUFPwjkCn0NAhBuEroU4RbdGKkaRByoHdYeyx+IIA0hWyF1IV4hGSGrIBcgYx+UHq8duRy3G64aoxmZGJUXmRapFccU9BMxE4AS4hFWEdwQdBAdENgPpA9/D2sPZw9yD4wPtg/wDzoQkxD9EHcRARKaEkQT/BPDFJYVdhZfF1EYSRlFGkMbQBw5HS0eFx/1H8UghCEvIsQiQCOiI+gjDiQVJPsjviNeI9oiMSJlIXMgXh8lHsocThuyGfgXIhYzFCwSERDkDakLYwkWB8YEdgIqAOf9r/uG+XD3cPWJ873xEPCC7hTtyeug6pnptOjw503nyOZh5hfm5+XQ5dLl6uUY5lzmtOYg56HnNejf6Jzpb+pW61HsYe2D7rjv/fBQ8q7zFPV/9ur3Ufmu+v37OP1a/l7/PgD2AIIB3gEGAvoBtgE6AYcAoP+D/jX9uvsW+k/4a/Zv9GPyTvA17iHsF+of6D7meeTV4lfhAeDX3tndCN1m3PDbp9uG24zbt9sB3Gfc5tx43RveyN593zXg7eCh4U/i8uKK4xTkj+T65FPlnOXT5frlEeYY5hHm/uXe5bXlg+VJ5QnlxOR85DLk5uOa407jBOO84nfiNuL44b/hi+Fd4TXhE+H44OTg2ODT4Nbg4eD04A/hMuFc4Y7hx+EH4k3imuLu4kfjp+MN5Hrk7eRn5ejlcOYB55rnO+jm6JnpVuoc6+vrxOyk7Y3ufe908HDxcfJ183z0hvWQ9pv3pfiv+bf6v/vF/Mv90f7X/90A5gHyAgEEFgUvBlAHdwilCdwKGgxgDawOABBZEbYSFhR3FdgWNRiOGeAaKBxmHZUeth/FIMIhqyJ/Iz0k5SR2JfElVSakJtwm/yYOJwgn7Sa/Jn4mKCa9JT4lqST9IzojXiJnIVUgJx/cHXMc7BpHGYQXpBWqE5YRbA8vDeIKiQgqBsoDbAEZ/9X8pfqQ+Jz2zvQs87rxfvB777XuL+7r7entK+6w7nfvffDB8T7z7/TQ9tr4CPtT/bP/IQKXBA0HfAndCyoOXRBxEmEUKRbHFzgZexqOG3IcKR2yHRAeRR5VHkEeDh6/HVcd2hxKHKwbARtOGpQZ1hgVGFUXlhbaFSIVcRTGEyQTihL7EXcRABGVEDkQ6w+uD4IPZw9fD2oPiQ+7DwIQXBDLEEwR4RGHEj4TBRTZFLsVphabF5YYlhmYGpobmRyVHYkedB9TICQh5SGTIiwjriMWJGMkkiShJI8kWiQBJIIj3iISIiEhCSDLHmkd5RtAGn0YnxapFJ4SghBZDicM8Am4B4IFUgMsART/Cv0R+yz5Xfek9QL0ePIF8avvae4+7SrsLOtF6nXpu+gX6IrnFee45nTmS+Y95k3me+bH5jTnwedv6D3pK+o462Hspe0B73Dw7/F68wv1nvYs+LH5JfuE/Mj97P7r/78AZgHeASICMgIMArABIAFdAGr/SP79/Iz7+vlN+Ir2t/Ta8vjwGO9A7XPruOkT6IfmGeXK457ileGx4PHfVt/e3ojeU9473j/eXN6P3tXeKt+M3/ffauDh4Fnh0OFF4rbiIOOD493jLuR15LLk4+QK5SblN+U+5TrlLeUX5fjk0uSl5HLkOuT+47/jfeM74/nit+J44jviAeLM4Zvhb+FI4SfhDOH24Obg3ODX4Nfg3ODm4PbgCuEj4UHhZeGP4b7h9eEy4njixeIc43zj5eNZ5NjkYeX15ZPmPOfu56rob+k86hDr6uvJ7K3tlO5972jwVPFA8ivzFvQA9er11Pa+96j4lfmE+nf7b/xs/XH+ff+RAK8B1wIJBEYFjAbbBzMJkwr4C2MN0A4+EKsRFhN8FNwVNBeCGMQZ+xokHEAdTR5LHzsgGyHtIbAiZSMMJKQkLiWqJRcmdCbAJvsmJCc4JzcnHifsJp4mNCarJQElNSRHIzQi/CCfHx4eeByuGsQYuRaSFFES+w+TDR4LoQgiBqYDNAHT/of8V/pJ+GP2q/Ql89fxwvDs71bvAu/w7iHvku9C8C7xU/Kr8zT15va8+LD6u/zY/v8ALANYBX4HlwmgC5QNcA8wEdESUhSxFe0WBhj7GMwZexoJG3YbxBv0GwkcAxzmG7IbahsQG6UaKxqkGRMZeBjWFy4XgxbWFSkVfhTWEzQTmRIHEn8RAxGVEDUQ5g+nD3oPXw9XD2MPgw+2D/0PVxDFEEUR1xF6Ei0T8BPBFJ8ViRZ9F3oYfhmGGpEbnBymHaoepx+aIH8hUyIUI74jTiTCJBYlSSVYJUElAyWeJBEkWyN/InwhVCAKH6AdGRx3Gr0Y8BYSFScTMhE3DzcNNws4CT0HRwVYA3EBlf/C/fr7PfqM+Of2T/XE80fy2PB47yru7ezE67HqtenS6AzoZOfc5nbmNeYa5ibmW+a45j3n6+e/6Ljp0+oO7GTt0u5T8OHxefMT9az2O/i9+Sz7gfy5/c7+vf+BABoBgwG7AcIBmAE9AbMA/P8a/xH+5PyX+zD6svgi94b14vM88pfw+e5l7d/rauoJ6cDnj+Z45XzknePZ4jLipuE04dzgneBz4F/gXuBu4I3gueA=" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+              
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/rodrigodzf\.github\.io\/physmodjax");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/rodrigodzf/physmodjax/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
