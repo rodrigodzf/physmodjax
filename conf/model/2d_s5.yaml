@@ -1,0 +1,15 @@
+_target_: physmodjax.models.ssm.BatchStackedSSM2DModel
+_partial_: True
+d_model: [41, 37]
+norm: "layer"
+activation: "gelu" # important otherwise parameters grow too large
+d_vars: 2
+n_layers: 4
+ssm_first_layer: 
+  _target_: physmodjax.models.ssm.S5SSM
+  _partial_: True
+  d_hidden: 512
+ssm:
+  _target_: physmodjax.models.ssm.S5SSM
+  _partial_: True
+  d_hidden: 512

@@ -1,0 +1,44 @@
+# @package _global_
+
+defaults:
+  - override /solver: tension_modulated_2d
+  - override /ic_generator: gaussian2d
+  - override /hydra/launcher: joblib
+
+ic_generator_name: Gaussian2d
+name: ftm_membrane_lin_${number_ics}_${ic_generator_name}_${solver.sampling_rate}Hz
+
+number_ics: 100
+ic_params:
+  ic_max_amplitude: 0.01
+  ic_min_amplitude: 0.001
+  ic_amplitude_random: True
+  ic_type: pluck
+
+solver:
+  sampling_rate: 16000
+  final_time: 0.5
+  use_nonlinear: False
+
+ic_generator:
+  _target_: physmodjax.solver.generator.${ic_generator_name}
+  num_points_x: ${solver.n_gridpoints_x}
+  aspect_ratio: ${solver.aspect_ratio}
+
+scratch_dir: "."
+output_dir: ${scratch_dir}/data/${name}
+
+hydra:
+  run:
+    dir: ${output_dir}
+  job:
+    chdir: True
+  sweep:
+    dir: ${scratch_dir}/data/ftm_linear
+    subdir: ${name}
+  sweeper:
+    params:
+      solver.sampling_rate: 16000
+      ic_generator_name: Gaussian2d, Noise2d
+  launcher:
+    n_jobs: 2

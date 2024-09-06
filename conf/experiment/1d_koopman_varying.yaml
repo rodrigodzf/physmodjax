@@ -1,0 +1,18 @@
+# @package _global_
+defaults:
+  - override /loss: lindyn
+  - override /model: 1d_dense_koopman_varying
+  - override /datamodule: string
+  - _self_
+
+optimiser:
+  _target_: optax.adamw
+  learning_rate: 1.0e-4
+
+loss:
+  encdec_weight: 1.0
+  lindyn_weight: 0.01
+  pred_weight: 1.0
+
+wandb:
+  group: "1d"

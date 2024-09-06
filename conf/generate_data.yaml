@@ -1,0 +1,19 @@
+defaults:
+  - solver: default.yaml
+  - ic_generator: default.yaml
+  - _self_
+
+hydra:
+  run:
+    dir: ${output_dir}
+  job:
+    chdir: True
+
+# ic_generator:
+#   _target_: physmodjax.solver.generator.Gaussian
+#   num_points: ${solver.n_gridpoints}
+
+name: default
+output_dir: data/${name}
+number_ics: 1
+seed: 3407

@@ -1,0 +1,6 @@
+_target_: physmodjax.solver.wave1d_modal.Wave1dSolverModal
+sampling_rate: 48000
+final_time: 1.0
+n_gridpoints: 101
+boundary_conditions: "dirichlet_dirichlet"
+n_max_modes: 50

@@ -1,0 +1,2 @@
+_target_: optax.clip_by_global_norm
+max_norm: 1.0

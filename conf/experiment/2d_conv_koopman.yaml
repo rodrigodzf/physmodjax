@@ -1,0 +1,21 @@
+# @package _global_
+defaults:
+  - override /loss: default
+  - override /model: 2d_conv_koopman
+  - override /datamodule: 2d
+  - _self_
+
+epochs: 2000
+epochs_val: 50
+
+optimiser:
+  _target_: optax.adamw
+  learning_rate: 3.0e-4
+
+# loss:
+#   encdec_weight: 1.0
+#   lindyn_weight: 0.0
+#   pred_weight: 1.0
+
+wandb:
+  group: "2d"

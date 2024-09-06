@@ -1,0 +1,10 @@
+defaults:
+  - string
+extract_channels: [0, 1]
+total_num_train: null
+total_num_val: null
+total_num_test: null
+num_steps_train: [1, 399]
+num_steps_val: [1, 399]
+windowed: True
+mode: "split"

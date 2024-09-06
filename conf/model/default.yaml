@@ -1,0 +1,5 @@
+_target_: physmodjax.fno.rnn.BatchFNORNN
+hidden_channels: 16
+grid_size: 101
+n_spectral_layers: 4
+length: 15999

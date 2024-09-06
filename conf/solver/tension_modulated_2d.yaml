@@ -1,0 +1,15 @@
+_target_: physmodjax.solver.wave2d_tenmod.Wave2dSolverTensionModulated
+sampling_rate: 16000
+final_time: 0.5
+n_gridpoints_x: 41
+length_x: 0.4
+aspect_ratio: 0.9
+rho: 1380
+h: 1.9e-4
+E: 3.5e9
+nu: 0.3
+d1: 8e-5
+d3: 1.4e-5
+Ts0: 2620
+n_max_modes: 225
+use_nonlinear: True

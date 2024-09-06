@@ -1,0 +1,20 @@
+# @package _global_
+defaults:
+  - override /hydra/launcher: joblib
+  - _self_
+
+hydra:
+  sweeper:
+    params:
+      +experiment: 1d_koopman, 1d_koopman_varying, 1d_lru, 1d_s5
+
+  launcher:
+    n_jobs: 1
+
+epochs: 1
+epochs_val: 1
+
+wandb:
+  group: "debug_sweep"
+  mode: "disabled"
+  

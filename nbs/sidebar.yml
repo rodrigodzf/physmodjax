@@ -1,0 +1,37 @@
+website:
+  sidebar:
+    contents:
+      - index.ipynb
+      - results.qmd
+      - section: Models
+        contents:
+          - models/autoencoders.ipynb
+          - models/conv.ipynb
+          - models/fno.ipynb
+          - models/fno_rnn.ipynb
+          - models/mlp.ipynb
+          - models/recurrent.ipynb
+          - models/ssm.ipynb
+      - section: Scripts
+        contents:
+          - scripts/dataset_generation.ipynb
+          - scripts/train_rnn.ipynb
+      - section: Solver
+        contents:
+          - solver/impulse_generator.ipynb
+          - solver/wave1d_solver_fe.ipynb
+          - solver/wave1d_solver_modal.ipynb
+          - solver/wave1d_solver_pseudospectral.ipynb
+          - solver/wave1d_solver_tensionmodulated.ipynb
+          - solver/wave2d_solver_modal.ipynb
+          - solver/wave2d_solver_tensionmodulated.ipynb
+      - section: Utils
+        contents:
+          - utils/checkpoint.ipynb
+          - utils/data.ipynb
+          - utils/ftm.ipynb
+          - utils/linear.ipynb
+          - utils/losses.ipynb
+          - utils/metrics.ipynb
+          - utils/modal.ipynb
+          - utils/plot.ipynb

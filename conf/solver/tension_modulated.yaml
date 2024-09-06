@@ -1,0 +1,14 @@
+_target_: physmodjax.solver.wave1d_tenmod.Wave1dSolverTensionModulated
+sampling_rate: 48000
+final_time: 1.0
+n_gridpoints: 101
+length: 0.65
+A: 0.5188e-6
+I: 0.141e-12
+rho: 1140
+E: 5.4e9
+d1: 8e-5
+d3: 1.4e-5
+Ts0: 60.97
+n_max_modes: 99
+use_nonlinear: True

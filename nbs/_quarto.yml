@@ -1,0 +1,24 @@
+project:
+  type: website
+
+format:
+  html:
+    theme: darkly
+    css: styles.css
+    toc: true
+
+website: 
+  site-path: results
+  open-graph: true
+  repo-actions: [issue]
+  navbar:
+    background: primary
+    search: true
+    collapse-below: lg
+    right:
+    - icon: github
+      href: "https://github.com/rodrigodzf/physmodjax"
+  sidebar:
+    style: floating
+
+metadata-files: [nbdev.yml, sidebar.yml]

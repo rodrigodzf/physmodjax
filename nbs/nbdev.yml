@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "physmodjax"
+  site-url: "https://rodrigodzf.github.io/physmodjax"
+  description: "Physical modelling using neural networks with JAX"
+  repo-branch: main
+  repo-url: "https://github.com/rodrigodzf/physmodjax"

@@ -1,0 +1,49 @@
+# @package _global_
+defaults:
+  - override /hydra/launcher: joblib
+  - _self_
+
+hydra:
+  run:
+    # dir: /data/scratch/acw632/physmodjax/outputs/compatibility_test/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    dir: outputs/compatibility_test/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: False
+  sweep:
+    # dir: /data/scratch/acw632/physmodjax/outputs/${wandb.group}--${now:%Y-%m-%d}--${now:%H-%M-%S}
+    dir: outputs/${wandb.group}--${now:%Y-%m-%d}--${now:%H-%M-%S}
+  sweeper:
+    params:
+      +experiment: 1d_koopman, 1d_koopman_varying, 1d_lru, 1d_s5
+      +seed: 3047, 3048, 3049
+  launcher:
+    n_jobs: 1
+
+epochs: 1
+epochs_val: 50
+
+model:
+  d_vars: 1
+
+optimiser:
+  learning_rate: 0.001
+
+datamodule:
+  data_array: ???
+  total_num_train: 400
+  total_num_val: 400
+  total_num_test: 2000
+  standardize_dataset: True
+  num_steps_train: [1, 399]
+  num_steps_val: [1, 399]
+
+wandb:
+  project: "physmodjax"
+  entity: "iir-modal"
+  group: "1d_400"
+  job_type: "train"
+  name: null
+  mode: "online"
+
+# this is a sweep for all the models.
+# Note that we cannot include grurnn and rnn models due to the lenght of the dataset. this is meant only to test from 2000 steps and above.

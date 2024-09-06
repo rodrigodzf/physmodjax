@@ -1,0 +1,9 @@
+_target_: physmodjax.models.fno.BatchedFNO2D
+_partial_: True
+d_model: [41, 37]
+n_modes: 20 # around half of the number of grid points
+hidden_channels: 8
+d_vars: 2 # position and velocity
+n_layers: 4
+norm: "layer"
+training: True

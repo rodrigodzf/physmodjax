@@ -1,0 +1,18 @@
+_target_: physmodjax.models.autoencoders.BatchedFourierAutoencoder2D
+_partial_: True
+d_vars: 2
+d_model: [41, 37]
+n_modes: 30
+norm: "layer"
+dynamics_model:
+  _target_: physmodjax.models.recurrent.LRUDynamicsVarying
+  _partial_: True
+  d_hidden: 1800 # complex 81*37*2
+  r_min: 0.001
+  r_max: 0.999
+  max_phase: 6.28
+  clip_eigs: False
+  model:
+    _target_: physmodjax.models.mlp.MLP
+    hidden_channels: [256, 512, 1024, 3600]
+    layer_norm: False

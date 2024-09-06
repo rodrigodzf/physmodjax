@@ -1,0 +1,18 @@
+# @package _global_
+defaults:
+  - model: default.yaml
+  - datamodule: default.yaml
+  - jax: default.yaml
+  - optimiser: default.yaml
+  - gradient_clip: default.yaml
+  - loss: default.yaml
+  - _self_
+
+seed: 3407
+
+epochs: 500
+epochs_val: 50
+
+frozen: []
+init_from_linear: false
+schedule_type: "constant"

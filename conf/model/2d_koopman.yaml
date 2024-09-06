@@ -1,0 +1,25 @@
+_target_: physmodjax.models.autoencoders.BatchedDenseKoopmanAutoencoder2D
+_partial_: True
+d_vars: 2
+d_model: [41, 37]
+norm: "layer"
+encoder_model:
+  _target_: physmodjax.models.mlp.MLP
+  _partial_: True
+  hidden_channels: [2048, 2048, 4096]
+  kernel_init:
+    _target_: flax.linen.initializers.orthogonal
+decoder_model:
+  _target_: physmodjax.models.mlp.MLP
+  _partial_: True
+  hidden_channels: [2048, 2048, "${eval:'${...d_vars} * ${...d_model[0]} * ${...d_model[1]}'}"] # 41 * 37 * 2
+  kernel_init:
+    _target_: flax.linen.initializers.orthogonal
+dynamics_model:
+  _target_: physmodjax.models.recurrent.LRUDynamics
+  _partial_: True
+  d_hidden: 2048 # complex
+  r_min: 0.0001
+  r_max: 0.9999
+  max_phase: 6.28
+  clip_eigs: False

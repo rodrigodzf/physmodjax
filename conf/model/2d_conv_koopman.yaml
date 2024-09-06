@@ -1,0 +1,22 @@
+_target_: physmodjax.models.autoencoders.BatchedKoopmanAutoencoder2D
+_partial_: True
+d_latent_channels: 128
+d_latent_dims: [5, 5]
+norm: "batch"
+encoder_model:
+  _target_: physmodjax.models.conv.ConvEncoder
+  _partial_: True
+  block_size: [32, 64, 128] # 40 -> 20 -> 10 -> 5
+decoder_model:
+  _target_: physmodjax.models.conv.ConvDecoder
+  _partial_: True
+  block_size: [32, 64, 128] # 5 -> 10 -> 20 -> 40
+  output_features: 3
+dynamics_model:
+  _target_: physmodjax.models.recurrent.LRUDynamics
+  _partial_: True
+  d_hidden: 1600 # 800 reals 5*5*32 = 400 complex
+  r_min: 0.9
+  r_max: 0.99
+  max_phase: 6.28
+  clip_eigs: False

@@ -1,0 +1,2 @@
+_target_: physmodjax.utils.data.DirectoryDataModule
+batch_size: 5

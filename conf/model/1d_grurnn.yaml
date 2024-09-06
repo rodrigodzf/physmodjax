@@ -1,0 +1,10 @@
+_target_: physmodjax.models.recurrent.BatchedDeepRNN
+_partial_: true
+d_model: 101
+d_vars: 2
+n_layers: 3
+cell:
+  _target_: flax.linen.GRUCell
+  _partial_: true
+training: true
+norm: "layer"

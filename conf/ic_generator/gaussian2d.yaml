@@ -1,0 +1,3 @@
+_target_: physmodjax.solver.generator.Gaussian2d
+num_points_x: ${solver.n_gridpoints_x}
+aspect_ratio: ${solver.aspect_ratio}

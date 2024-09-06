@@ -1,0 +1,2 @@
+_target_: physmodjax.utils.losses.lindyn_loss
+_partial_: True

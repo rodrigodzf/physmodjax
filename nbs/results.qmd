@@ -1,0 +1,75 @@
+---
+title: "Results"
+crossref:
+  custom:
+    - kind: float
+      reference-prefix: Video
+      key: vid
+---
+
+> Result for the paper "Towards Efficient Modelling of String Dynamics: A Comparison of State Space and Koopman Methods"
+
+## Animated Predictions
+### Non-linear Gaussian
+
+:::{#vid-nonlin}
+![](assets/non_linear_string_renc.mp4)
+:::
+
+@vid-nonlin shows the evolution of the non-linear string at 16kHz with Gaussian-like initial conditions. The first 300 steps are shown.
+
+### Linear Noise
+
+:::{#vid-lin}
+![](assets/linear_noise.mp4)
+:::
+
+@vid-lin shows the evolution of the linear string at 16kHz with noise-like initial conditions. Only the first 150 steps are shown.
+
+## Audio
+
+<style scoped>
+audio { height: 50px; }
+</style>
+
+
+The following table shows the audio predictions for a single point in the string for DMD, Koopman, KoopmanVAR, LRU, and S5 methods for both the linear noise and non-linear Gaussian initial conditions.
+
+|               | Linear Noise         | Non-linear Gaussian |
+|:-------------:|:--------------------:|:--------------------:|
+| Ground Truth | <audio controls><source src="assets/linear_original.wav" type="audio/wav"></audio> | <audio controls><source src="assets/nonlinear_original.wav" type="audio/wav"></audio> |
+| DMD           | <audio controls><source src="assets/linear_dmd.wav" type="audio/wav"></audio> | <audio controls><source src="assets/nonlinear_dmd.wav" type="audio/wav"></audio> |
+| Koopman       | <audio controls><source src="assets/linear_Koopman.wav" type="audio/wav"></audio> | <audio controls><source src="assets/nonlinear_Koopman.wav" type="audio/wav"></audio> |
+| KoopmanVAR    | <audio controls><source src="assets/linear_KoopmanVAR.wav" type="audio/wav"></audio> | <audio controls><source src="assets/nonlinear_KoopmanVAR.wav" type="audio/wav"></audio> |
+| LRU           | <audio controls><source src="assets/linear_LRU.wav" type="audio/wav"></audio> | <audio controls><source src="assets/nonlinear_LRU.wav" type="audio/wav"></audio> |
+| S5            | <audio controls><source src="assets/linear_S5.wav" type="audio/wav"></audio> | <audio controls><source src="assets/nonlinear_S5.wav" type="audio/wav"></audio> |
+
+## Table of Results
+
+<style scoped>
+table {
+  font-size: 10px;
+}
+</style>
+### Results for the non-linear dataset
+
+| Model | Gaussian 4000kHz MSE Rel | Gaussian 4000kHz MAE Rel | Gaussian 16000kHz MSE Rel | Gaussian 16000kHz MAE Rel | Noise 4000kHz MSE Rel | Noise 4000kHz MAE Rel | Noise 16000kHz MSE Rel | Noise 16000kHz MAE Rel |
+|-------|-------------------------|-------------------------|--------------------------|--------------------------|----------------------|----------------------|-----------------------|-----------------------|
+| DMD | 1.1865(0.2019) | 0.8289(0.0857) | 1.0938(0.1311) | 0.8747(0.0749) | 1.6695(0.2687) | 1.0420(0.1178) | 1.8313(0.2467) | 1.0953(0.087) |
+| Koopman | 0.1041(0.0144) | 0.3271(0.0259) | 0.0971(0.0029) | 0.3117(0.0044) | 0.2070(0.0939) | 0.3978(0.1084) | 0.0865(0.0155) | 0.2596(0.0275) |
+| Koopman\_var | **0.0113(0.0061)** | **0.0977(0.0284)** | **0.0094(0.0046)** | **0.0888(0.0245)** | **0.0041(0.0008)** | **0.0527(0.0081)** | **0.0531(0.0572)** | **0.1714(0.1056)** |
+| LRU | 0.0260(0.0067) | 0.1571(0.0240) | 0.0390(0.0187) | 0.1870(0.0450) | 0.0250(0.0065) | 0.1284(0.0077) | 0.0476(0.0058) | 0.1922(0.0125) |
+| S5 | 0.1165(0.0260) | 0.3318(0.0291) | 0.0224(0.0013) | 0.1467(0.0053) | 0.0507(0.0127) | 0.1916(0.0190) | 0.0387(0.0062) | 0.1493(0.0078) |
+
+### Results for the linear dataset
+
+| Model | Gaussian 4000kHz MSE Rel | Gaussian 4000kHz MAE Rel | Gaussian 16000kHz MSE Rel | Gaussian 16000kHz MAE Rel | Noise 4000kHz MSE Rel | Noise 4000kHz MAE Rel | Noise 16000kHz MSE Rel | Noise 16000kHz MAE Rel |
+|-------|-------------------------|-------------------------|--------------------------|--------------------------|----------------------|----------------------|-----------------------|-----------------------|
+| DMD | **0.0000(0.0000)** | **0.0060(0.0007)** | **0.0001(0.0000)** | **0.0097(0.0006)** | **0.0000(0.0000)** | **0.0042(0.0004)** | **0.0001(0.0000)** | **0.0066(0.0004)** |
+| Koopman | 0.0110(0.0069) | 0.1005(0.0331) | 0.0048(0.0009) | 0.0692(0.0074) | 0.0073(0.0052) | 0.0789(0.0322) | 0.0019(0.0001) | 0.0423(0.0004) |
+| Koopman\_var | 0.0020(0.0013) | 0.0427(0.0145) | 0.0013(0.0012) | 0.0321(0.0142) | 0.0002(0.0001) | 0.0134(0.0023) | 0.0495(0.0973) | 0.1125(0.1785) |
+| LRU | 0.0014(0.0005) | 0.0373(0.0065) | 0.0010(0.0002) | 0.0317(0.0034) | 0.0005(0.0001) | 0.0199(0.0025) | 0.0005(0.0002) | 0.0217(0.0036) |
+| S5 | 0.0386(0.0273) | 0.1896(0.0597) | 0.0156(0.0102) | 0.1206(0.0421) | 0.0112(0.0029) | 0.1023(0.0139) | 0.0037(0.0012) | 0.0539(0.0119) |
+
+*Mean and standard deviation (in parentheses) for 5 different seeds of the a) non-linear and b) linear validation data across different models and sampling rates, under Gaussian and noise-like initial conditions. We use 4000 steps for both 4kHz and 16kHz. Since DMD does not depend on a seed, we include the standard deviation of the MSE and MAE across the validation dataset.*
+

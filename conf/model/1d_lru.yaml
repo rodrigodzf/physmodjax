@@ -1,0 +1,20 @@
+_target_: physmodjax.models.ssm.BatchStackedSSMModel
+_partial_: True
+training: True
+norm: "batch"
+activation: "full_glu"
+d_model: 101
+d_vars: 2
+n_layers: 6
+ssm_first_layer: 
+  _target_: physmodjax.models.ssm.LRU
+  _partial_: True
+  r_min: 0.99
+  r_max: 1.0
+  d_hidden: 128
+ssm:
+  _target_: physmodjax.models.ssm.LRU
+  _partial_: True
+  r_min: 0.99
+  r_max: 1.0
+  d_hidden: 128

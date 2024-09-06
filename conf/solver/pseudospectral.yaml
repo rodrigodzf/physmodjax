@@ -1,0 +1,5 @@
+_target_: physmodjax.solver.wave1d_pseudospectral.Wave1dSolverPseudoSpectral
+sampling_rate: 48000
+final_time: 1.0
+length: 1.0
+n_gridpoints: 101

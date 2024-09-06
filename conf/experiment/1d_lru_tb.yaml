@@ -1,0 +1,13 @@
+# @package _global_
+defaults:
+  - override /loss: default
+  - override /model: 1d_lru
+  - override /datamodule: string_tb
+  - _self_
+
+optimiser:
+  _target_: optax.adamw
+  learning_rate: 1.0e-4
+
+wandb:
+  group: "1d"

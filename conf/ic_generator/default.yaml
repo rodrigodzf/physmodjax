@@ -1,0 +1,2 @@
+_target_: physmodjax.solver.generator.Gaussian
+num_points: ${solver.n_gridpoints}
