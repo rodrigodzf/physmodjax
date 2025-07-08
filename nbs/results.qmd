@@ -13,7 +13,7 @@ crossref:
 ### Non-linear Gaussian
 
 :::{#vid-nonlin}
-![](assets/non_linear_string_renc.mp4)
+![](assets/non_linear_string.mp4)
 :::
 
 @vid-nonlin shows the evolution of the non-linear string at 16kHz with Gaussian-like initial conditions. The first 300 steps are shown.

@@ -22,3 +22,4 @@ website:
     style: floating
 
 metadata-files: [nbdev.yml, sidebar.yml]
+resources: [assets]

@@ -3,6 +3,7 @@ website:
     contents:
       - index.ipynb
       - results.qmd
+      - JAES.ipynb
       - section: Models
         contents:
           - models/autoencoders.ipynb
