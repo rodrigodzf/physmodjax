@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -64,15 +65,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-f2861a68d958ad1d9ca581fbeca039a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:site_name" content="physmodjax">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -166,6 +168,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../results.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Results</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../JAES.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Results JAES</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -361,18 +369,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#restore_experiment_state" id="toc-restore_experiment_state" class="nav-link active" data-scroll-target="#restore_experiment_state">restore_experiment_state</a></li>
-  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns:</a>
-  <ul class="collapse">
-  <li><a href="#download_ckpt_single_run" id="toc-download_ckpt_single_run" class="nav-link" data-scroll-target="#download_ckpt_single_run">download_ckpt_single_run</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/rodrigodzf/physmodjax/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -396,192 +394,355 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
-<pre><code>/Users/diaz/mambaforge/envs/physmodjax/lib/python3.10/site-packages/fastcore/docscrape.py:230: UserWarning: potentially wrong underline length... 
-Returns: 
-------- in 
-Restores the train state from a run.
-...
-  else: warn(msg)</code></pre>
-<hr>
-<p><a href="https://github.com/rodrigodzf/physmodjax/blob/main/physmodjax/utils/checkpoint.py#L20" target="_blank" style="float:right; font-size:smaller">source</a></p>
-<section id="restore_experiment_state" class="level3">
-<h3 class="anchored" data-anchor-id="restore_experiment_state">restore_experiment_state</h3>
-<blockquote class="blockquote">
-<pre><code> restore_experiment_state (run_path:pathlib.Path, best:bool=True,
-                           step_to_restore:int=None,
-                           x0_shape:Tuple[int]=(1, 101, 1),
-                           x_shape:Tuple[int]=(1, 1, 101, 1),
-                           kwargs:dict={})</code></pre>
-</blockquote>
-<p>*Restores the train state from a run.</p>
-<p>Args: run_path (Path): Path to the run directory (e.g.&nbsp;“outputs/2024-01-23/22-15-11”)</p>
-</section>
-<section id="returns" class="level2">
-<h2 class="anchored" data-anchor-id="returns">Returns:</h2>
-<pre><code>train_state.TrainState: The train state of the experiment
-nn.Module: The model used in the experiment
-CheckpointManager: The checkpoint manager*</code></pre>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 6%">
-<col style="width: 25%">
-<col style="width: 34%">
-<col style="width: 34%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>Type</strong></th>
-<th><strong>Default</strong></th>
-<th><strong>Details</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>run_path</td>
-<td>Path</td>
-<td></td>
-<td>Path to the run directory (e.g.&nbsp;“outputs/2024-01-23/22-15-11”)</td>
-</tr>
-<tr class="even">
-<td>best</td>
-<td>bool</td>
-<td>True</td>
-<td>If True, restore the best checkpoint instead of the latest</td>
-</tr>
-<tr class="odd">
-<td>step_to_restore</td>
-<td>int</td>
-<td>None</td>
-<td>If not None, restore the checkpoint at this step</td>
-</tr>
-<tr class="even">
-<td>x0_shape</td>
-<td>Tuple</td>
-<td>(1, 101, 1)</td>
-<td>Shape of the initial condition</td>
-</tr>
-<tr class="odd">
-<td>x_shape</td>
-<td>Tuple</td>
-<td>(1, 1, 101, 1)</td>
-<td>Shape of the input data</td>
-</tr>
-<tr class="even">
-<td>kwargs</td>
-<td>dict</td>
-<td>{}</td>
-<td>Additional arguments to pass to the model</td>
-</tr>
-<tr class="odd">
-<td><strong>Returns</strong></td>
-<td><strong>Tuple</strong></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><a href="https://github.com/rodrigodzf/physmodjax/blob/main/physmodjax/utils/checkpoint.py#L102" target="_blank" style="float:right; font-size:smaller">source</a></p>
-<section id="download_ckpt_single_run" class="level3">
-<h3 class="anchored" data-anchor-id="download_ckpt_single_run">download_ckpt_single_run</h3>
-<blockquote class="blockquote">
-<pre><code> download_ckpt_single_run (run_name:str, project:str,
-                           tmp_dir:pathlib.Path=Path('/tmp/physmodjax'),
-                           overwrite:bool=False)</code></pre>
-</blockquote>
-<div id="cell-4" class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> hydra <span class="im">import</span> initialize, compose</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> hydra.core.hydra_config <span class="im">import</span> HydraConfig</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> physmodjax.scripts.train_rnn <span class="im">import</span> train_rnn</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-5" class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data_array <span class="op">=</span> <span class="st">"../data/ftm_string_nonlin_1000_Noise_4000Hz_1.0s.npy"</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>split <span class="op">=</span> [<span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>]</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>extract_channels <span class="op">=</span> [<span class="dv">0</span>]</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> initialize(version_base<span class="op">=</span><span class="va">None</span>, config_path<span class="op">=</span><span class="st">"../../conf"</span>):</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    cfg <span class="op">=</span> compose(</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        return_hydra_config<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        config_name<span class="op">=</span><span class="st">"train_rnn"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        overrides<span class="op">=</span>[</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">"+experiment=1d_koopman"</span>,</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"++datamodule.data_array=</span><span class="sc">{</span>data_array<span class="sc">}</span><span class="ss">"</span>,</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"++datamodule.batch_size=</span><span class="sc">{</span>batch_size<span class="sc">}</span><span class="ss">"</span>,</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"++datamodule.split=</span><span class="sc">{</span>split<span class="sc">}</span><span class="ss">"</span>,</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"++datamodule.extract_channels=</span><span class="sc">{</span>extract_channels<span class="sc">}</span><span class="ss">"</span>,</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>            <span class="st">"++model.d_vars=1"</span>,</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>            <span class="st">"++epochs=1"</span>,</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            <span class="st">"++epochs_val=1"</span>,</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>            <span class="st">"++wandb.project=physmodjax"</span>,</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>            <span class="st">"++wandb.entity=iir-modal"</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        ],</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    OmegaConf.register_new_resolver(<span class="st">"eval"</span>, <span class="bu">eval</span>, replace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    OmegaConf.resolve(cfg)</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    cfg_no_hydra <span class="op">=</span> {k:v <span class="cf">for</span> (k,v) <span class="kw">in</span> cfg.items() <span class="cf">if</span> <span class="st">"hydra"</span> <span class="kw">not</span> <span class="kw">in</span> k} </span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(OmegaConf.to_yaml(cfg_no_hydra))</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    HydraConfig.instance().set_config(cfg)</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(OmegaConf.to_yaml((HydraConfig.get().runtime)))</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    output_dir <span class="op">=</span> Path(cfg.hydra.run.<span class="bu">dir</span>).absolute()</span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># HydraConfig.get().runtime["output_dir"] = output_dir</span></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>    HydraConfig.instance().set_config(cfg)</span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Output dir: </span><span class="sc">{</span>output_dir<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>    train_rnn(cfg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>::: {#cell-3 .cell 0=‘e’ 1=‘x’ 2=‘p’ 3=‘o’ 4=‘r’ 5=‘t’}</p>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> Any</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> flax.linen <span class="im">as</span> nn</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hydra</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> jax</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> orbax.checkpoint <span class="im">as</span> obc</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wandb</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flax.training <span class="im">import</span> train_state</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> omegaconf <span class="im">import</span> OmegaConf, DictConfig</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> wandb.apis <span class="im">import</span> public</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::</p>
+<p>::: {#cell-4 .cell 0=‘e’ 1=‘x’ 2=‘p’ 3=‘o’ 4=‘r’ 5=‘t’}</p>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> restore_experiment_state(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    run_path: Path,  <span class="co"># Path to the run directory (e.g. "outputs/2024-01-23/22-15-11")</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    best: <span class="bu">bool</span> <span class="op">=</span> <span class="va">True</span>,  <span class="co"># If True, restore the best checkpoint instead of the latest</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    best_metric: <span class="bu">str</span> <span class="op">=</span> <span class="st">"val/mae_rel"</span>,  <span class="co"># Metric to use for best checkpoint selection</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    step_to_restore: <span class="bu">int</span> <span class="op">=</span> <span class="va">None</span>,  <span class="co"># If not None, restore the checkpoint at this step, incompatible with `best`</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    kwargs: <span class="bu">dict</span> <span class="op">=</span> {},  <span class="co"># Additional arguments to pass to the model</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    device: jax.Device <span class="op">=</span> <span class="va">None</span>,  <span class="co"># Device to restore the model on</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">tuple</span>[train_state.TrainState, nn.Module, obc.CheckpointManager]:</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Restores the train state from a run.</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">        run_path (Path): Path to the run directory (e.g. "outputs/2024-01-23/22-15-11")</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">        best (bool): If True, restore the best checkpoint instead of the latest</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">        step_to_restore (int): If not None, restore the checkpoint at this step</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">        kwargs (dict): Additional arguments to pass to the model</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">        device (jax.Device): Device to restore the model on</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">        train_state.TrainState: The train state of the experiment</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">        nn.Module: The model used in the experiment</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">        CheckpointManager: The checkpoint manager</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Make sure the path is a Path object</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    run_path <span class="op">=</span> Path(run_path)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># These are hardcoded, do not change</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    ckpt_path <span class="op">=</span> run_path <span class="op">/</span> <span class="st">"checkpoints"</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    config_path <span class="op">=</span> run_path <span class="op">/</span> <span class="st">".hydra"</span> <span class="op">/</span> <span class="st">"config.yaml"</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    cfg <span class="op">=</span> OmegaConf.load(config_path)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check if either `best` or `step_to_restore` is set, but not both</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> best:</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> step_to_restore <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>                <span class="st">"You cannot set both `best` and `step_to_restore`. Please choose one."</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> best_metric <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>                <span class="st">"If `best=True`, you must provide a `best_metric` to determine the best checkpoint."</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    options <span class="op">=</span> obc.CheckpointManagerOptions(</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        max_to_keep<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        create<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        best_fn<span class="op">=</span><span class="kw">lambda</span> x: <span class="bu">float</span>(</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>            x[best_metric]</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        ),  <span class="co"># Shouldn't be hardcoded here, not a problem atm because we only save one step, best</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>        best_mode<span class="op">=</span><span class="st">"min"</span>,</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_restore_type(x: Any) <span class="op">-&gt;</span> obc.RestoreArgs:</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> obc.RestoreArgs(restore_type<span class="op">=</span>np.ndarray)</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> obc.CheckpointManager(</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>        ckpt_path,</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>        options<span class="op">=</span>options,</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>        item_handlers<span class="op">=</span>{</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>            <span class="st">"state"</span>: obc.PyTreeCheckpointHandler(),</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>            <span class="st">"default"</span>: obc.PyTreeCheckpointHandler(),</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    ) <span class="im">as</span> checkpoint_manager:</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>        model_cls: nn.Module <span class="op">=</span> hydra.utils.instantiate(cfg.model)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>        model <span class="op">=</span> model_cls(training<span class="op">=</span><span class="va">False</span>, <span class="op">**</span>kwargs)</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get checkpoint metadata</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>        step <span class="op">=</span> (</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>            checkpoint_manager.latest_step()</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> best</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span> checkpoint_manager.best_step()</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>        step <span class="op">=</span> step_to_restore <span class="cf">if</span> step_to_restore <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">else</span> step</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        metadatas <span class="op">=</span> checkpoint_manager.item_metadata(step)</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Restoring checkpoint from step </span><span class="sc">{</span>step<span class="sc">}</span><span class="ss">..."</span>)</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Restore the metadata</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Backwards compatibility for older checkpoints</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">"state"</span> <span class="kw">in</span> metadatas <span class="kw">and</span> metadatas.state <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>            restore_args_state <span class="op">=</span> jax.tree_util.tree_map(</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>                set_restore_type, metadatas[<span class="st">"state"</span>]</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>            metadatas <span class="op">=</span> checkpoint_manager.restore(</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>                step<span class="op">=</span>step,</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>                args<span class="op">=</span>obc.args.Composite(</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>                    state<span class="op">=</span>obc.args.PyTreeRestore(</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>                        item<span class="op">=</span>metadatas[<span class="st">"state"</span>],</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>                        restore_args<span class="op">=</span>restore_args_state,</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>                    ),</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>            metadata_state <span class="op">=</span> metadatas.state</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> <span class="st">"default"</span> <span class="kw">in</span> metadatas <span class="kw">and</span> metadatas.default <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"This is a checkpoint with old formatting"</span>)</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">"model"</span> <span class="kw">not</span> <span class="kw">in</span> metadatas.default:</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>                <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"No model found in the checkpoint"</span>)</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>            restore_args_default <span class="op">=</span> jax.tree_util.tree_map(</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>                set_restore_type, metadatas[<span class="st">"default"</span>]</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>            metadatas <span class="op">=</span> checkpoint_manager.restore(</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>                step<span class="op">=</span>step,</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>                args<span class="op">=</span>obc.args.Composite(</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>                    default<span class="op">=</span>obc.args.PyTreeRestore(</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>                        item<span class="op">=</span>metadatas[<span class="st">"default"</span>],</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>                        restore_args<span class="op">=</span>restore_args_default,</span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>                    ),</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>                ),</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>            metadata_state <span class="op">=</span> metadatas.default[<span class="st">"model"</span>]</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"No state found in the checkpoint"</span>)</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">"batch_stats"</span> <span class="kw">in</span> metadata_state:</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Define TrainState with optional batch_stats</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>            <span class="kw">class</span> TrainState(train_state.TrainState):</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>                key: jax.Array</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>                batch_stats: Any <span class="op">=</span> <span class="va">None</span>  <span class="co"># Optional field</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Initialize the empty state</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> TrainState(</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>                key<span class="op">=</span>{},</span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>                step<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>                apply_fn<span class="op">=</span>model.<span class="bu">apply</span>,</span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>                params<span class="op">=</span>metadata_state[<span class="st">"params"</span>],</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>                tx<span class="op">=</span>{},</span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>                opt_state<span class="op">=</span>metadata_state[<span class="st">"opt_state"</span>],</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>                batch_stats<span class="op">=</span>metadata_state[<span class="st">"batch_stats"</span>],</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Define TrainState with optional batch_stats</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>            <span class="kw">class</span> TrainState(train_state.TrainState):</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>                key: jax.Array</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>            state <span class="op">=</span> TrainState(</span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>                key<span class="op">=</span>{},</span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>                step<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>                apply_fn<span class="op">=</span>model.<span class="bu">apply</span>,</span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>                params<span class="op">=</span>metadata_state[<span class="st">"params"</span>],</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>                tx<span class="op">=</span>{},</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>                opt_state<span class="op">=</span>metadata_state[<span class="st">"opt_state"</span>],</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>        <span class="co"># If device is not specified, use the default device</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> device <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>            device <span class="op">=</span> jax.devices()[<span class="dv">0</span>]</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Move the state to the specified device</span></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>        state <span class="op">=</span> jax.device_put(state, device)</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> state, model, checkpoint_manager</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::</p>
+<p>::: {#cell-5 .cell 0=‘e’ 1=‘x’ 2=‘p’ 3=‘o’ 4=‘r’ 5=‘t’}</p>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> download_ckpt_single_run(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    run_name: <span class="bu">str</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    project: <span class="bu">str</span> <span class="op">=</span> <span class="st">"iir-modal/physmodjax"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    tmp_dir: Path <span class="op">=</span> Path(<span class="st">"/tmp/physmodjax"</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    overwrite: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">tuple</span>[Path, DictConfig]:</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    filter_dict <span class="op">=</span> {</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"display_name"</span>: run_name,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># if wandb.run is None:</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># wandb.init()</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    api: public.Api <span class="op">=</span> wandb.Api()</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    runs: public.Runs <span class="op">=</span> api.runs(project, filter_dict)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(runs) <span class="op">&gt;</span> <span class="dv">0</span>, <span class="ss">f"No runs found with name </span><span class="sc">{</span>run_name<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(runs) <span class="op">==</span> <span class="dv">1</span>, <span class="ss">f"More than one run found with name </span><span class="sc">{</span>run_name<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    run: public.Run <span class="op">=</span> runs[<span class="dv">0</span>]</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    conf <span class="op">=</span> OmegaConf.create(run.config)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    artifacts: public.RunArtifacts <span class="op">=</span> run.logged_artifacts()</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    artifact: wandb.Artifact</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># check if no artifacts</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(artifacts) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="ss">f"No artifacts found for run </span><span class="sc">{</span>run_name<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> artifact <span class="kw">in</span> artifacts:</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> artifact.<span class="bu">type</span> <span class="op">==</span> <span class="st">"model"</span>:</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>            checkpoint_path <span class="op">=</span> tmp_dir <span class="op">/</span> artifact.name</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> checkpoint_path.exists() <span class="kw">and</span> <span class="kw">not</span> overwrite:</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f"Checkpoint already exists at </span><span class="sc">{</span>checkpoint_path<span class="sc">}</span><span class="ss">, skipping"</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> checkpoint_path, conf</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>                artifact.download(checkpoint_path)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># save config next to checkpoint</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    conf_path <span class="op">=</span> checkpoint_path <span class="op">/</span> <span class="st">".hydra"</span> <span class="op">/</span> <span class="st">"config.yaml"</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    conf_path.parent.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    OmegaConf.save(conf, conf_path)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Downloaded checkpoint to </span><span class="sc">{</span>checkpoint_path<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> checkpoint_path, conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::</p>
+<p>::: {#cell-6 .cell 0=‘e’ 1=‘x’ 2=‘p’ 3=‘o’ 4=‘r’ 5=‘t’}</p>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> restore_run_from_wandb(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    run_name: <span class="bu">str</span>,  <span class="co"># Name of the run to restore</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    wandb_project: <span class="bu">str</span>,  <span class="co"># Name of the project on wandb</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    device: jax.Device <span class="op">=</span> <span class="va">None</span>,  <span class="co"># Device to restore the model on</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> <span class="bu">tuple</span>[train_state.TrainState, nn.Module, DictConfig]:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Restores the train state from a wandb run.</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">    Assumes that we want the model with the best checkpoint according to the metric in the config, or latest step.</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Assumes that we want to initialize the model with an output length equal to the number of steps used in training.</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Download the checkpoint and config from wandb</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    checkpoint_path, cfg <span class="op">=</span> download_ckpt_single_run(run_name, wandb_project)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    kwargs <span class="op">=</span> {<span class="st">"n_steps"</span>: cfg.datamodule.num_steps_train[<span class="dv">1</span>]}</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">hasattr</span>(cfg, <span class="st">"checkpoint_manager_options"</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        <span class="kw">and</span> <span class="bu">hasattr</span>(cfg.checkpoint_manager_options, <span class="st">"best_fn"</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">and</span> <span class="bu">hasattr</span>(cfg.checkpoint_manager_options.best_fn, <span class="st">"metric"</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    ):</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"Restoring best checkpoint according to metric </span><span class="sc">{</span>cfg<span class="sc">.</span>checkpoint_manager_options<span class="sc">.</span>best_fn<span class="sc">.</span>metric<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>        best_metric <span class="op">=</span> cfg.checkpoint_manager_options.best_fn.metric</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>        best <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Restoring latest checkpoint"</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>        best_metric <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>        best <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Restore the checkpoint</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    state, model, _ <span class="op">=</span> restore_experiment_state(</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        checkpoint_path,</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>        best<span class="op">=</span>best,</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>        best_metric<span class="op">=</span>best_metric,</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>        kwargs<span class="op">=</span>kwargs,</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>        device<span class="op">=</span>device,</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> state, model, cfg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::</p>
+<div id="cell-7" class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> hydra <span class="im">import</span> compose, initialize</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> hydra.core.hydra_config <span class="im">import</span> HydraConfig</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> physmodjax.scripts.train_rnn <span class="im">import</span> train_rnn</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>data_array <span class="op">=</span> <span class="st">"/media/fast/data/datasets/physmodjax/ftm_nonlinear_varamp/ftm_string_nonlin_1000_Noise_4000Hz_1.0s.npy"</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># data_array = "/home/carlos/projects/physmodjax/data/icaasp25/debug_validation_test/ftm_membrane_nonlin_3_Gaussian2d_16000Hz.npy"</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>split <span class="op">=</span> [<span class="fl">0.334</span>, <span class="fl">0.334</span>, <span class="fl">0.334</span>]</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>extract_channels <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> <span class="st">""</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>charset <span class="op">=</span> string.ascii_letters <span class="op">+</span> string.digits</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>random_name <span class="op">=</span> <span class="st">""</span>.join(random.choices(charset, k<span class="op">=</span><span class="dv">12</span>))</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> initialize(version_base<span class="op">=</span><span class="va">None</span>, config_path<span class="op">=</span><span class="st">"../../conf"</span>):</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    cfg <span class="op">=</span> compose(</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        return_hydra_config<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        config_name<span class="op">=</span><span class="st">"train_rnn"</span>,</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>        overrides<span class="op">=</span>[</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>            <span class="st">"+experiment=1d_lru"</span>,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"++datamodule.data_array=</span><span class="sc">{</span>data_array<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"++datamodule.batch_size=</span><span class="sc">{</span>batch_size<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"++datamodule.split=</span><span class="sc">{</span>split<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"++datamodule.extract_channels=</span><span class="sc">{</span>extract_channels<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>            <span class="st">"++model.d_vars=2"</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>            <span class="st">"++epochs=1"</span>,</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>            <span class="st">"++epochs_val=1"</span>,</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>            <span class="st">"++wandb.project=physmodjax"</span>,</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>            <span class="st">"++wandb.entity=iir-modal"</span>,</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f"++wandb.name=</span><span class="sc">{</span>random_name<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>        ],</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    OmegaConf.register_new_resolver(<span class="st">"eval"</span>, <span class="bu">eval</span>, replace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    OmegaConf.resolve(cfg)</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    cfg_no_hydra <span class="op">=</span> {k: v <span class="cf">for</span> (k, v) <span class="kw">in</span> cfg.items() <span class="cf">if</span> <span class="st">"hydra"</span> <span class="kw">not</span> <span class="kw">in</span> k}</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(OmegaConf.to_yaml(cfg_no_hydra))</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    HydraConfig.instance().set_config(cfg)</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(OmegaConf.to_yaml(HydraConfig.get().runtime))</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    output_dir <span class="op">=</span> Path(cfg.hydra.run.<span class="bu">dir</span>).absolute()</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>    <span class="co"># HydraConfig.get().runtime["output_dir"] = output_dir</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    HydraConfig.instance().set_config(cfg)</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Output dir: </span><span class="sc">{</span>output_dir<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    train_rnn(cfg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>wandb: WARNING Path /Users/diaz/projects/physmodjax/nbs/utils/outputs/2024-09-03/12-28-33/wandb/ wasn't writable, using system temp directory.</code></pre>
+<pre><code>INFO:2025-06-03 18:40:13,669:jax._src.xla_bridge:867: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>model:
-  _target_: physmodjax.models.autoencoders.BatchedKoopmanAutoencoder1D
+  _target_: physmodjax.models.ssm.BatchStackedSSMModel
   _partial_: true
-  d_vars: 1
+  training: true
+  norm: batch
+  activation: gelu
   d_model: 101
-  norm: layer
-  encoder_model:
-    _target_: physmodjax.models.mlp.MLP
+  d_vars: 2
+  n_layers: 5
+  ssm_first_layer:
+    _target_: physmodjax.models.ssm.LRU
     _partial_: true
-    hidden_channels:
-    - 128
-    - 128
-    - 256
-    kernel_init:
-      _target_: flax.linen.initializers.orthogonal
-  decoder_model:
-    _target_: physmodjax.models.mlp.MLP
-    _partial_: true
-    hidden_channels:
-    - 128
-    - 128
-    - 101
-    kernel_init:
-      _target_: flax.linen.initializers.orthogonal
-  dynamics_model:
-    _target_: physmodjax.models.recurrent.LRUDynamics
-    _partial_: true
-    d_hidden: 128
     r_min: 0.99
-    r_max: 0.999
-    max_phase: 6.28
-    clip_eigs: true
+    r_max: 1.0
+    d_hidden: 128
+  ssm:
+    _target_: physmodjax.models.ssm.LRU
+    _partial_: true
+    r_min: 0.99
+    r_max: 1.0
+    d_hidden: 128
 datamodule:
   _target_: physmodjax.utils.data.DirectoryDataModule
   split:
-  - 0.01
-  - 0.01
-  - 0.01
+  - 0.334
+  - 0.334
+  - 0.334
   batch_size: 1
   extract_channels:
   - 0
+  - 1
   total_num_train: 4000
   total_num_val: 4000
   total_num_test: 4000
@@ -595,41 +756,95 @@ datamodule:
   standardize_dataset: true
   windowed: false
   cache: true
-  data_array: ../data/ftm_string_nonlin_1000_Noise_4000Hz_1.0s.npy
+  data_array: /media/fast/data/datasets/physmodjax/ftm_nonlinear_varamp/ftm_string_nonlin_1000_Noise_4000Hz_1.0s.npy
 jax:
   platform_name: null
   preallocate_gpu_memory: false
 optimiser:
-  _target_: optax.adamw
   learning_rate: 0.0001
+  schedules:
+    regular:
+      _target_: optax.constant_schedule
+      value: 0.0001
+    ssm:
+      _target_: optax.constant_schedule
+      value: 2.5e-05
+  optimizers:
+    regular:
+      _target_: optax.adamw
+      learning_rate:
+        _target_: optax.constant_schedule
+        value: 0.0001
+    ssm:
+      _target_: optax.adam
+      learning_rate:
+        _target_: optax.constant_schedule
+        value: 2.5e-05
+  gradient_transform:
+    _target_: optax.multi_transform
+    transforms:
+      regular:
+        _target_: optax.adamw
+        learning_rate:
+          _target_: optax.constant_schedule
+          value: 0.0001
+      ssm:
+        _target_: optax.adam
+        learning_rate:
+          _target_: optax.constant_schedule
+          value: 2.5e-05
+    param_labels: null
+  keys_to_labels:
+    ssm:
+    - nu_log
+    - theta_log
+    - gamma_log
+    - B_re
+    - B_im
+    - C_re
+    - C_im
+    regular: []
 gradient_clip:
   _target_: optax.clip_by_global_norm
   max_norm: 1.0
 loss:
-  _target_: physmodjax.utils.losses.lindyn_loss
+  _target_: physmodjax.utils.losses.mse_loss
   _partial_: true
-  encdec_weight: 1.0
-  lindyn_weight: 0.01
-  pred_weight: 1.0
 seed: 3407
 epochs: 1
 epochs_val: 1
+debug: false
 frozen: []
+init_with_analytical: false
 init_from_linear: false
+enable_checkpointing: true
+early_stopping:
+  _target_: flax.training.early_stopping.EarlyStopping
+  min_delta: 0.001
+  patience: 10
 schedule_type: constant
+verbosity: info
+checkpoint_manager_options:
+  _target_: orbax.checkpoint.CheckpointManagerOptions
+  max_to_keep: 1
+  create: true
+  best_fn:
+    _target_: physmodjax.utils.metrics.make_best_fn
+    metric: val/mae_rel
+  best_mode: min
 wandb:
-  group: 1d
   project: physmodjax
   entity: iir-modal
+  name: FktCAm7xArHa
 
 version: 1.3.2
 version_base: '1.3'
-cwd: /Users/diaz/projects/physmodjax/nbs/utils
+cwd: /home/carlos/projects/physmodjax_private/nbs/utils
 config_sources:
 - path: hydra.conf
   schema: pkg
   provider: hydra
-- path: /Users/diaz/projects/physmodjax/conf
+- path: /home/carlos/projects/physmodjax_private/conf
   schema: file
   provider: main
 - path: ''
@@ -637,13 +852,13 @@ config_sources:
   provider: schema
 output_dir: ???
 choices:
-  experiment: 1d_koopman
-  loss: lindyn
+  experiment: 1d_lru
+  loss: default
   gradient_clip: default.yaml
   optimiser: default.yaml
   jax: default.yaml
   datamodule: string
-  model: 1d_koopman
+  model: 1d_lru
   hydra/env: default
   hydra/callbacks: null
   hydra/job_logging: default
@@ -654,439 +869,510 @@ choices:
   hydra/launcher: basic
   hydra/output: default
 
-Output dir: /Users/diaz/projects/physmodjax/nbs/utils/outputs/2024-09-03/12-28-33</code></pre>
+Output dir: /home/carlos/projects/physmodjax_private/nbs/utils/outputs/2025-06-03/18-40-13</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-Finishing last run (ID:bg96gmb3) before initializing another...
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[06/03/25 18:40:13] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Unable to initialize backend <span style="color: #008000; text-decoration-color: #008000">'tpu'</span>: INTERNAL: Failed to open         <a href="file:///home/carlos/projects/physmodjax_private/.venv/lib/python3.10/site-packages/jax/_src/xla_bridge.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">xla_bridge.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file:///home/carlos/projects/physmodjax_private/.venv/lib/python3.10/site-packages/jax/_src/xla_bridge.py#867" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">867</span></a>
+<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         libtpu.so: libtpu.so: cannot open shared object file: No such file   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
+<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         or directory                                                         <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
+</pre>
 </div>
-<div class="cell-output cell-output-display">
- View run <strong style="color:#cdcd00">chocolate-dream-1762</strong> at: <a href="https://wandb.ai/iir-modal/physmodjax/runs/bg96gmb3" target="_blank">https://wandb.ai/iir-modal/physmodjax/runs/bg96gmb3</a><br> View project at: <a href="https://wandb.ai/iir-modal/physmodjax" target="_blank">https://wandb.ai/iir-modal/physmodjax</a><br>Synced 5 W&amp;B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+<div class="cell-output cell-output-stderr">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-blue-fg ansi-bold">wandb</span>: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+</pre>
 </div>
-<div class="cell-output cell-output-display">
-Find logs at: <code>/var/folders/f_/jbsvj3wx2gv9z_2s7ywlc8p00000gn/T/wandb/run-20240903_120018-bg96gmb3/logs</code>
-</div>
-<div class="cell-output cell-output-display">
-Successfully finished last run (ID:bg96gmb3). Initializing new run:<br>
-</div>
-<div class="cell-output cell-output-display">
-Tracking run with wandb version 0.17.8
-</div>
-<div class="cell-output cell-output-display">
-Run data is saved locally in <code>/var/folders/f_/jbsvj3wx2gv9z_2s7ywlc8p00000gn/T/wandb/run-20240903_122833-4z5togcj</code>
-</div>
-<div class="cell-output cell-output-display">
-Syncing run <strong><a href="https://wandb.ai/iir-modal/physmodjax/runs/4z5togcj" target="_blank">serene-butterfly-1763</a></strong> to <a href="https://wandb.ai/iir-modal/physmodjax" target="_blank">Weights &amp; Biases</a> (<a href="https://wandb.me/run" target="_blank">docs</a>)<br>
-</div>
-<div class="cell-output cell-output-display">
- View project at <a href="https://wandb.ai/iir-modal/physmodjax" target="_blank">https://wandb.ai/iir-modal/physmodjax</a>
-</div>
-<div class="cell-output cell-output-display">
- View run at <a href="https://wandb.ai/iir-modal/physmodjax/runs/4z5togcj" target="_blank">https://wandb.ai/iir-modal/physmodjax/runs/4z5togcj</a>
 </div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
-File <span class="ansi-green-fg">~/mambaforge/envs/physmodjax/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py:92</span>, in <span class="ansi-cyan-fg">_call_target</span><span class="ansi-blue-fg">(_target_, _partial_, args, kwargs, full_key)</span>
-<span class="ansi-green-fg ansi-bold">     91</span> <span style="font-weight:bold;color:rgb(0,135,0)">try</span>:
-<span class="ansi-green-fg">---&gt; 92</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">_target_</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">     93</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> <span style="font-weight:bold;color:rgb(215,95,95)">Exception</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> e:
+<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[8], line 54</span>
+<span class="ansi-green-fg ansi-bold">     50</span> HydraConfig<span style="color:rgb(98,98,98)">.</span>instance()<span style="color:rgb(98,98,98)">.</span>set_config(cfg)
+<span class="ansi-green-fg ansi-bold">     52</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">f</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Output dir: </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>output_dir<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span style="color:rgb(175,0,0)">"</span>)
+<span class="ansi-green-fg">---&gt; 54</span> <span class="ansi-yellow-bg">train_rnn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">cfg</span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">~/projects/physmodjax/physmodjax/utils/data.py:407</span>, in <span class="ansi-cyan-fg">DirectoryDataModule.__init__</span><span class="ansi-blue-fg">(self, data_array, split, batch_size, extract_channels, num_steps_train, num_steps_val, standardize_dataset, mean, std, mode, windowed, hankelize, shuffle_train, cache, rolling_windows, total_num_train, total_num_val, total_num_test)</span>
-<span class="ansi-green-fg ansi-bold">    405</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>val_batch_size <span style="color:rgb(98,98,98)">=</span> batch_size
-<span class="ansi-green-fg">--&gt; 407</span> <span style="font-weight:bold;color:rgb(0,135,0)">assert</span> Path(data_array)<span style="color:rgb(98,98,98)">.</span>exists() <span style="font-weight:bold;color:rgb(175,0,255)">or</span> <span style="color:rgb(0,135,0)">all</span>(
-<span class="ansi-green-fg ansi-bold">    408</span>     [Path(d)<span style="color:rgb(98,98,98)">.</span>exists() <span style="font-weight:bold;color:rgb(0,135,0)">for</span> d <span style="font-weight:bold;color:rgb(175,0,255)">in</span> data_array]
-<span class="ansi-green-fg ansi-bold">    409</span> ), <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">The data array does not exist</span><span style="color:rgb(175,0,0)">"</span>
-<span class="ansi-green-fg ansi-bold">    411</span> <span style="font-style:italic;color:rgb(95,135,135)"># if we have a list of directories, we will concatenate the data</span>
-<span class="ansi-green-fg ansi-bold">    412</span> <span style="font-style:italic;color:rgb(95,135,135)"># else we will assume that the directory contains the data</span>
-
-<span class="ansi-red-fg">AssertionError</span>: The data array does not exist
-
-The above exception was the direct cause of the following exception:
-
-<span class="ansi-red-fg">InstantiationException</span>                    Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[12], line 41</span>
-<span class="ansi-green-fg ansi-bold">     37</span> HydraConfig<span style="color:rgb(98,98,98)">.</span>instance()<span style="color:rgb(98,98,98)">.</span>set_config(cfg)
-<span class="ansi-green-fg ansi-bold">     39</span> <span style="color:rgb(0,135,0)">print</span>(<span style="color:rgb(175,0,0)">f</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Output dir: </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>output_dir<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span style="color:rgb(175,0,0)">"</span>)
-<span class="ansi-green-fg">---&gt; 41</span> <span class="ansi-yellow-bg">train_rnn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">cfg</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">~/mambaforge/envs/physmodjax/lib/python3.10/site-packages/hydra/main.py:83</span>, in <span class="ansi-cyan-fg">main.&lt;locals&gt;.main_decorator.&lt;locals&gt;.decorated_main</span><span class="ansi-blue-fg">(cfg_passthrough)</span>
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/hydra/main.py:83</span>, in <span class="ansi-cyan-fg">main.&lt;locals&gt;.main_decorator.&lt;locals&gt;.decorated_main</span><span class="ansi-blue-fg">(cfg_passthrough)</span>
 <span class="ansi-green-fg ansi-bold">     80</span> <span style="color:rgb(175,0,255)">@functools</span><span style="color:rgb(98,98,98)">.</span>wraps(task_function)
-<span class="ansi-green-fg ansi-bold">     81</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span> <span style="color:rgb(0,0,255)">decorated_main</span>(cfg_passthrough: Optional[DictConfig] <span style="color:rgb(98,98,98)">=</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>) <span style="color:rgb(98,98,98)">-</span><span style="color:rgb(98,98,98)">&gt;</span> Any:
+<span class="ansi-green-fg ansi-bold">     81</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span style="color:rgb(0,0,255)">decorated_main</span>(cfg_passthrough: Optional[DictConfig] <span style="color:rgb(98,98,98)">=</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>) <span style="color:rgb(98,98,98)">-</span><span style="color:rgb(98,98,98)">&gt;</span> Any:
 <span class="ansi-green-fg ansi-bold">     82</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> cfg_passthrough <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
 <span class="ansi-green-fg">---&gt; 83</span>         <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">task_function</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">cfg_passthrough</span><span class="ansi-yellow-bg">)</span>
 <span class="ansi-green-fg ansi-bold">     84</span>     <span style="font-weight:bold;color:rgb(0,135,0)">else</span>:
 <span class="ansi-green-fg ansi-bold">     85</span>         args_parser <span style="color:rgb(98,98,98)">=</span> get_args_parser()
 
-File <span class="ansi-green-fg">~/projects/physmodjax/physmodjax/scripts/train_rnn.py:482</span>, in <span class="ansi-cyan-fg">train_rnn</span><span class="ansi-blue-fg">(cfg)</span>
-<span class="ansi-green-fg ansi-bold">    471</span> run <span style="color:rgb(98,98,98)">=</span> wandb<span style="color:rgb(98,98,98)">.</span>init(
-<span class="ansi-green-fg ansi-bold">    472</span>     <span style="color:rgb(0,135,0)">dir</span><span style="color:rgb(98,98,98)">=</span>output_dir,
-<span class="ansi-green-fg ansi-bold">    473</span>     config<span style="color:rgb(98,98,98)">=</span>OmegaConf<span style="color:rgb(98,98,98)">.</span>to_container(
+File <span class="ansi-green-fg">~/projects/physmodjax_private/physmodjax/scripts/train_rnn.py:686</span>, in <span class="ansi-cyan-fg">train_rnn</span><span class="ansi-blue-fg">(cfg)</span>
+<span class="ansi-green-fg ansi-bold">    683</span> <span style="font-style:italic;color:rgb(95,135,135)"># Initialise logging</span>
+<span class="ansi-green-fg ansi-bold">    684</span> output_dir <span style="color:rgb(98,98,98)">=</span> Path(HydraConfig<span style="color:rgb(98,98,98)">.</span>get()<span style="color:rgb(98,98,98)">.</span>run<span style="color:rgb(98,98,98)">.</span>dir)<span style="color:rgb(98,98,98)">.</span>absolute()
+<span class="ansi-green-fg">--&gt; 686</span> run <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">wandb</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">init</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-fg ansi-bold">    687</span> <span class="ansi-yellow-bg">    </span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">dir</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">output_dir</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg ansi-bold">    688</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">config</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">OmegaConf</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">to_container</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-fg ansi-bold">    689</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">cfg</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg ansi-bold">    690</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">resolve</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span style="font-weight:bold;color:rgb(0,135,0)" class="ansi-yellow-bg">True</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg ansi-bold">    691</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">throw_on_missing</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span style="font-weight:bold;color:rgb(0,135,0)" class="ansi-yellow-bg">False</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg ansi-bold">    692</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg ansi-bold">    693</span> <span class="ansi-yellow-bg">    </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">cfg</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">wandb</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg ansi-bold">    694</span> <span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg ansi-bold">    696</span> model_cls <span style="color:rgb(98,98,98)">=</span> hydra<span style="color:rgb(98,98,98)">.</span>utils<span style="color:rgb(98,98,98)">.</span>instantiate(cfg<span style="color:rgb(98,98,98)">.</span>model)
+<span class="ansi-green-fg ansi-bold">    697</span> datamodule <span style="color:rgb(98,98,98)">=</span> hydra<span style="color:rgb(98,98,98)">.</span>utils<span style="color:rgb(98,98,98)">.</span>instantiate(cfg<span style="color:rgb(98,98,98)">.</span>datamodule)
+
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_init.py:1255</span>, in <span class="ansi-cyan-fg">init</span><span class="ansi-blue-fg">(job_type, dir, config, project, entity, reinit, tags, group, name, notes, magic, config_exclude_keys, config_include_keys, anonymous, mode, allow_val_change, resume, force, tensorboard, sync_tensorboard, monitor_gym, save_code, id, fork_from, resume_from, settings)</span>
+<span class="ansi-green-fg ansi-bold">   1253</span> <span style="font-weight:bold;color:rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg ansi-bold">   1254</span>     wi <span style="color:rgb(98,98,98)">=</span> _WandbInit()
+<span class="ansi-green-fg">-&gt; 1255</span>     <span class="ansi-yellow-bg">wi</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">setup</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg ansi-bold">   1256</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> wi<span style="color:rgb(98,98,98)">.</span>init()
+<span class="ansi-green-fg ansi-bold">   1258</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> <span style="font-weight:bold;color:rgb(215,95,95)">KeyboardInterrupt</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> e:
+
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_init.py:193</span>, in <span class="ansi-cyan-fg">_WandbInit.setup</span><span class="ansi-blue-fg">(self, kwargs)</span>
+<span class="ansi-green-fg ansi-bold">    184</span> settings__disable_service <span style="color:rgb(98,98,98)">=</span> (kwargs<span style="color:rgb(98,98,98)">.</span>get(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">settings</span><span style="color:rgb(175,0,0)">"</span>) <span style="font-weight:bold;color:rgb(175,0,255)">or</span> {})<span style="color:rgb(98,98,98)">.</span>get(
+<span class="ansi-green-fg ansi-bold">    185</span>     <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">_disable_service</span><span style="color:rgb(175,0,0)">"</span>
+<span class="ansi-green-fg ansi-bold">    186</span> ) <span style="font-weight:bold;color:rgb(175,0,255)">or</span> os<span style="color:rgb(98,98,98)">.</span>environ<span style="color:rgb(98,98,98)">.</span>get(wandb<span style="color:rgb(98,98,98)">.</span>env<span style="color:rgb(98,98,98)">.</span>_DISABLE_SERVICE)
+<span class="ansi-green-fg ansi-bold">    188</span> setup_settings <span style="color:rgb(98,98,98)">=</span> {
+<span class="ansi-green-fg ansi-bold">    189</span>     <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">mode</span><span style="color:rgb(175,0,0)">"</span>: mode <span style="font-weight:bold;color:rgb(175,0,255)">or</span> settings_mode,
+<span class="ansi-green-fg ansi-bold">    190</span>     <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">_disable_service</span><span style="color:rgb(175,0,0)">"</span>: settings__disable_service,
+<span class="ansi-green-fg ansi-bold">    191</span> }
+<span class="ansi-green-fg">--&gt; 193</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_wl <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">wandb_setup</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">setup</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">settings</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">setup_settings</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg ansi-bold">    194</span> <span style="font-style:italic;color:rgb(95,135,135)"># Make sure we have a logger setup (might be an early logger)</span>
+<span class="ansi-green-fg ansi-bold">    195</span> <span style="font-weight:bold;color:rgb(0,135,0)">assert</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_wl <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
+
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_setup.py:386</span>, in <span class="ansi-cyan-fg">setup</span><span class="ansi-blue-fg">(settings)</span>
+<span class="ansi-green-fg ansi-bold">    330</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span style="color:rgb(0,0,255)">setup</span>(settings: Optional[Settings] <span style="color:rgb(98,98,98)">=</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>) <span style="color:rgb(98,98,98)">-</span><span style="color:rgb(98,98,98)">&gt;</span> Optional[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">_WandbSetup</span><span style="color:rgb(175,0,0)">"</span>]:
+<span class="ansi-green-fg ansi-bold">    331</span> <span style="color:rgb(188,188,188)">    </span><span style="font-style:italic;color:rgb(175,0,0)">"""Prepares W&amp;B for use in the current process and its children.</span>
+<span class="ansi-green-fg ansi-bold">    332</span> 
+<span class="ansi-green-fg ansi-bold">    333</span> <span style="font-style:italic;color:rgb(175,0,0)">    You can usually ignore this as it is implicitly called by `wandb.init()`.</span>
 <span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-fg ansi-bold">    478</span>     <span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">*</span>cfg<span style="color:rgb(98,98,98)">.</span>wandb,
-<span class="ansi-green-fg ansi-bold">    479</span> )
-<span class="ansi-green-fg ansi-bold">    481</span> model_cls <span style="color:rgb(98,98,98)">=</span> hydra<span style="color:rgb(98,98,98)">.</span>utils<span style="color:rgb(98,98,98)">.</span>instantiate(cfg<span style="color:rgb(98,98,98)">.</span>model)
-<span class="ansi-green-fg">--&gt; 482</span> datamodule <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">hydra</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">utils</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">instantiate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">cfg</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">datamodule</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">    484</span> <span style="font-style:italic;color:rgb(95,135,135)"># Log data info</span>
-<span class="ansi-green-fg ansi-bold">    485</span> wandb<span style="color:rgb(98,98,98)">.</span>config<span style="color:rgb(98,98,98)">.</span>update({<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">output_dir</span><span style="color:rgb(175,0,0)">"</span>: output_dir})
+<span class="ansi-green-fg ansi-bold">    384</span> <span style="font-style:italic;color:rgb(175,0,0)">        ```</span>
+<span class="ansi-green-fg ansi-bold">    385</span> <span style="font-style:italic;color:rgb(175,0,0)">    """</span>
+<span class="ansi-green-fg">--&gt; 386</span>     ret <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">_setup</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">settings</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">settings</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg ansi-bold">    387</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> ret
 
-File <span class="ansi-green-fg">~/mambaforge/envs/physmodjax/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py:226</span>, in <span class="ansi-cyan-fg">instantiate</span><span class="ansi-blue-fg">(config, *args, **kwargs)</span>
-<span class="ansi-green-fg ansi-bold">    223</span>     _convert_ <span style="color:rgb(98,98,98)">=</span> config<span style="color:rgb(98,98,98)">.</span>pop(_Keys<span style="color:rgb(98,98,98)">.</span>CONVERT, ConvertMode<span style="color:rgb(98,98,98)">.</span>NONE)
-<span class="ansi-green-fg ansi-bold">    224</span>     _partial_ <span style="color:rgb(98,98,98)">=</span> config<span style="color:rgb(98,98,98)">.</span>pop(_Keys<span style="color:rgb(98,98,98)">.</span>PARTIAL, <span style="font-weight:bold;color:rgb(0,135,0)">False</span>)
-<span class="ansi-green-fg">--&gt; 226</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">instantiate_node</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-fg ansi-bold">    227</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">config</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">recursive</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">_recursive_</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">convert</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">_convert_</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">partial</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">_partial_</span>
-<span class="ansi-green-fg ansi-bold">    228</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">    229</span> <span style="font-weight:bold;color:rgb(0,135,0)">elif</span> OmegaConf<span style="color:rgb(98,98,98)">.</span>is_list(config):
-<span class="ansi-green-fg ansi-bold">    230</span>     <span style="font-style:italic;color:rgb(95,135,135)"># Finalize config (convert targets to strings, merge with kwargs)</span>
-<span class="ansi-green-fg ansi-bold">    231</span>     config_copy <span style="color:rgb(98,98,98)">=</span> copy<span style="color:rgb(98,98,98)">.</span>deepcopy(config)
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_setup.py:326</span>, in <span class="ansi-cyan-fg">_setup</span><span class="ansi-blue-fg">(settings, _reset)</span>
+<span class="ansi-green-fg ansi-bold">    323</span>     teardown()
+<span class="ansi-green-fg ansi-bold">    324</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
+<span class="ansi-green-fg">--&gt; 326</span> wl <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">_WandbSetup</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">settings</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">settings</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg ansi-bold">    327</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> wl
 
-File <span class="ansi-green-fg">~/mambaforge/envs/physmodjax/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py:347</span>, in <span class="ansi-cyan-fg">instantiate_node</span><span class="ansi-blue-fg">(node, convert, recursive, partial, *args)</span>
-<span class="ansi-green-fg ansi-bold">    342</span>                 value <span style="color:rgb(98,98,98)">=</span> instantiate_node(
-<span class="ansi-green-fg ansi-bold">    343</span>                     value, convert<span style="color:rgb(98,98,98)">=</span>convert, recursive<span style="color:rgb(98,98,98)">=</span>recursive
-<span class="ansi-green-fg ansi-bold">    344</span>                 )
-<span class="ansi-green-fg ansi-bold">    345</span>             kwargs[key] <span style="color:rgb(98,98,98)">=</span> _convert_node(value, convert)
-<span class="ansi-green-fg">--&gt; 347</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">_call_target</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">_target_</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">partial</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">full_key</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">    348</span> <span style="font-weight:bold;color:rgb(0,135,0)">else</span>:
-<span class="ansi-green-fg ansi-bold">    349</span>     <span style="font-style:italic;color:rgb(95,135,135)"># If ALL or PARTIAL non structured or OBJECT non structured,</span>
-<span class="ansi-green-fg ansi-bold">    350</span>     <span style="font-style:italic;color:rgb(95,135,135)"># instantiate in dict and resolve interpolations eagerly.</span>
-<span class="ansi-green-fg ansi-bold">    351</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> convert <span style="color:rgb(98,98,98)">==</span> ConvertMode<span style="color:rgb(98,98,98)">.</span>ALL <span style="font-weight:bold;color:rgb(175,0,255)">or</span> (
-<span class="ansi-green-fg ansi-bold">    352</span>         convert <span style="font-weight:bold;color:rgb(175,0,255)">in</span> (ConvertMode<span style="color:rgb(98,98,98)">.</span>PARTIAL, ConvertMode<span style="color:rgb(98,98,98)">.</span>OBJECT)
-<span class="ansi-green-fg ansi-bold">    353</span>         <span style="font-weight:bold;color:rgb(175,0,255)">and</span> node<span style="color:rgb(98,98,98)">.</span>_metadata<span style="color:rgb(98,98,98)">.</span>object_type <span style="font-weight:bold;color:rgb(175,0,255)">in</span> (<span style="font-weight:bold;color:rgb(0,135,0)">None</span>, <span style="color:rgb(0,135,0)">dict</span>)
-<span class="ansi-green-fg ansi-bold">    354</span>     ):
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_setup.py:304</span>, in <span class="ansi-cyan-fg">_WandbSetup.__init__</span><span class="ansi-blue-fg">(self, settings)</span>
+<span class="ansi-green-fg ansi-bold">    302</span>     _WandbSetup<span style="color:rgb(98,98,98)">.</span>_instance<span style="color:rgb(98,98,98)">.</span>_update(settings<span style="color:rgb(98,98,98)">=</span>settings)
+<span class="ansi-green-fg ansi-bold">    303</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span>
+<span class="ansi-green-fg">--&gt; 304</span> _WandbSetup<span style="color:rgb(98,98,98)">.</span>_instance <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">_WandbSetup__WandbSetup</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">settings</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">settings</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">pid</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">pid</span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">~/mambaforge/envs/physmodjax/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py:97</span>, in <span class="ansi-cyan-fg">_call_target</span><span class="ansi-blue-fg">(_target_, _partial_, args, kwargs, full_key)</span>
-<span class="ansi-green-fg ansi-bold">     95</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> full_key:
-<span class="ansi-green-fg ansi-bold">     96</span>     msg <span style="color:rgb(98,98,98)">+</span><span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(175,0,0)">f</span><span style="color:rgb(175,0,0)">"</span><span style="font-weight:bold;color:rgb(175,95,0)">\n</span><span style="color:rgb(175,0,0)">full_key: </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>full_key<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span style="color:rgb(175,0,0)">"</span>
-<span class="ansi-green-fg">---&gt; 97</span> <span style="font-weight:bold;color:rgb(0,135,0)">raise</span> InstantiationException(msg) <span style="font-weight:bold;color:rgb(0,135,0)">from</span> <span style="font-weight:bold;color:rgb(0,0,255)">e</span>
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_setup.py:115</span>, in <span class="ansi-cyan-fg">_WandbSetup__WandbSetup.__init__</span><span class="ansi-blue-fg">(self, pid, settings, environ)</span>
+<span class="ansi-green-fg ansi-bold">    112</span> wandb<span style="color:rgb(98,98,98)">.</span>termsetup(<span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_settings, logger)
+<span class="ansi-green-fg ansi-bold">    114</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_check()
+<span class="ansi-green-fg">--&gt; 115</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_setup</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
 
-<span class="ansi-red-fg">InstantiationException</span>: Error in call to target 'physmodjax.utils.data.DirectoryDataModule':
-AssertionError('The data array does not exist')
-full_key: datamodule</pre>
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_setup.py:250</span>, in <span class="ansi-cyan-fg">_WandbSetup__WandbSetup._setup</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg ansi-bold">    247</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_settings<span style="color:rgb(98,98,98)">.</span>_noop <span style="font-weight:bold;color:rgb(175,0,255)">and</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_settings<span style="color:rgb(98,98,98)">.</span>_disable_service:
+<span class="ansi-green-fg ansi-bold">    248</span>     <span style="font-weight:bold;color:rgb(0,135,0)">from</span><span style="color:rgb(188,188,188)"> </span><span style="font-weight:bold;color:rgb(0,0,255)">wandb</span><span style="font-weight:bold;color:rgb(0,0,255)">.</span><span style="font-weight:bold;color:rgb(0,0,255)">sdk</span><span style="font-weight:bold;color:rgb(0,0,255)">.</span><span style="font-weight:bold;color:rgb(0,0,255)">lib</span><span style="color:rgb(188,188,188)"> </span><span style="font-weight:bold;color:rgb(0,135,0)">import</span> service_connection
+<span class="ansi-green-fg">--&gt; 250</span>     <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_connection <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">service_connection</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">connect_to_service</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_settings</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg ansi-bold">    252</span> sweep_path <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_settings<span style="color:rgb(98,98,98)">.</span>sweep_param_path
+<span class="ansi-green-fg ansi-bold">    253</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> sweep_path:
+
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/lib/service_connection.py:40</span>, in <span class="ansi-cyan-fg">connect_to_service</span><span class="ansi-blue-fg">(settings)</span>
+<span class="ansi-green-fg ansi-bold">     37</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> conn:
+<span class="ansi-green-fg ansi-bold">     38</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> conn
+<span class="ansi-green-fg">---&gt; 40</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">_start_and_connect_service</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">settings</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/lib/service_connection.py:75</span>, in <span class="ansi-cyan-fg">_start_and_connect_service</span><span class="ansi-blue-fg">(settings)</span>
+<span class="ansi-green-fg ansi-bold">     68</span> <span style="font-style:italic;color:rgb(175,0,0)">"""Starts a service process and returns a connection to it.</span>
+<span class="ansi-green-fg ansi-bold">     69</span> 
+<span class="ansi-green-fg ansi-bold">     70</span> <span style="font-style:italic;color:rgb(175,0,0)">An atexit hook is registered to tear down the service process and wait for</span>
+<span class="ansi-green-fg ansi-bold">     71</span> <span style="font-style:italic;color:rgb(175,0,0)">it to complete. The hook does not run in processes started using the</span>
+<span class="ansi-green-fg ansi-bold">     72</span> <span style="font-style:italic;color:rgb(175,0,0)">multiprocessing module.</span>
+<span class="ansi-green-fg ansi-bold">     73</span> <span style="font-style:italic;color:rgb(175,0,0)">"""</span>
+<span class="ansi-green-fg ansi-bold">     74</span> proc <span style="color:rgb(98,98,98)">=</span> service<span style="color:rgb(98,98,98)">.</span>_Service(settings)
+<span class="ansi-green-fg">---&gt; 75</span> <span class="ansi-yellow-bg">proc</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">start</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg ansi-bold">     77</span> port <span style="color:rgb(98,98,98)">=</span> proc<span style="color:rgb(98,98,98)">.</span>sock_port
+<span class="ansi-green-fg ansi-bold">     78</span> <span style="font-weight:bold;color:rgb(0,135,0)">assert</span> port
+
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/service/service.py:232</span>, in <span class="ansi-cyan-fg">_Service.start</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg ansi-bold">    231</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span style="color:rgb(0,0,255)">start</span>(<span style="color:rgb(0,135,0)">self</span>) <span style="color:rgb(98,98,98)">-</span><span style="color:rgb(98,98,98)">&gt;</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">--&gt; 232</span>     <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_launch_server</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/service/service.py:224</span>, in <span class="ansi-cyan-fg">_Service._launch_server</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg ansi-bold">    222</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>_startup_debug_print(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">wait_ports</span><span style="color:rgb(175,0,0)">"</span>)
+<span class="ansi-green-fg ansi-bold">    223</span> <span style="font-weight:bold;color:rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg">--&gt; 224</span>     <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_wait_for_ports</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">fname</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">proc</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">internal_proc</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg ansi-bold">    225</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> <span style="font-weight:bold;color:rgb(215,95,95)">Exception</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> e:
+<span class="ansi-green-fg ansi-bold">    226</span>     _sentry<span style="color:rgb(98,98,98)">.</span>reraise(e)
+
+File <span class="ansi-green-fg">~/projects/physmodjax_private/.venv/lib/python3.10/site-packages/wandb/sdk/service/service.py:105</span>, in <span class="ansi-cyan-fg">_Service._wait_for_ports</span><span class="ansi-blue-fg">(self, fname, proc)</span>
+<span class="ansi-green-fg ansi-bold">     96</span>     <span style="font-weight:bold;color:rgb(0,135,0)">raise</span> ServiceStartProcessError(
+<span class="ansi-green-fg ansi-bold">     97</span>         <span style="color:rgb(175,0,0)">f</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">The wandb service process exited with </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>proc<span style="color:rgb(98,98,98)">.</span>returncode<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span style="color:rgb(175,0,0)">. </span><span style="color:rgb(175,0,0)">"</span>
+<span class="ansi-green-fg ansi-bold">     98</span>         <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Ensure that `sys.executable` is a valid python interpreter. </span><span style="color:rgb(175,0,0)">"</span>
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-fg ansi-bold">    102</span>         context<span style="color:rgb(98,98,98)">=</span>context,
+<span class="ansi-green-fg ansi-bold">    103</span>     )
+<span class="ansi-green-fg ansi-bold">    104</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> os<span style="color:rgb(98,98,98)">.</span>path<span style="color:rgb(98,98,98)">.</span>isfile(fname):
+<span class="ansi-green-fg">--&gt; 105</span>     <span class="ansi-yellow-bg">time</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">sleep</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">0.2</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg ansi-bold">    106</span>     <span style="font-weight:bold;color:rgb(0,135,0)">continue</span>
+<span class="ansi-green-fg ansi-bold">    107</span> <span style="font-weight:bold;color:rgb(0,135,0)">try</span>:
+
+<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
 </div>
-</div>
-</div>
-<div id="cell-6" class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># instantiate the datamodule</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>datamodule <span class="op">=</span> hydra.utils.instantiate(cfg.datamodule)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>train_dataloader <span class="op">=</span> datamodule.train_dataloader</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>val_dataloader <span class="op">=</span> datamodule.val_dataloader</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>test_dataloader <span class="op">=</span> datamodule.test_dataloader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="cell-7" class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>checkpoint_path, cfg <span class="op">=</span> download_ckpt_single_run(<span class="st">"eager-valley-1758"</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>kwargs <span class="op">=</span> {<span class="st">"n_steps"</span>: datamodule.num_steps_target_val}</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>state, model, ckpt_manager <span class="op">=</span> restore_experiment_state(</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    checkpoint_path,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    kwargs<span class="op">=</span>kwargs,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Checkpoint already exists at /tmp/physmodjax/checkpoints_fiug7qv5:v0, skipping
-Using data_info from config: [1, 101, 1]
-Restoring checkpoint from step 1...</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/home/diaz/anaconda3/envs/physmodjax_private/lib/python3.10/site-packages/orbax/checkpoint/type_handlers.py:1552: UserWarning: Couldn't find sharding info under RestoreArgs. Populating sharding info from sharding file. Please note restoration time will be slightly increased due to reading from file instead of directly from RestoreArgs. Note also that this option is unsafe when restoring on a different topology than the checkpoint was saved with.
-  warnings.warn(</code></pre>
 </div>
 </div>
 <div id="cell-8" class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> partial</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> physmodjax.utils.metrics <span class="im">import</span> (</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    mse,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    mae,</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    mse_relative,</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    mae_relative,</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    accumulate_metrics,</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># instantiate the datamodule</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>datamodule <span class="op">=</span> hydra.utils.instantiate(cfg.datamodule)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>train_dataloader <span class="op">=</span> datamodule.train_dataloader</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>val_dataloader <span class="op">=</span> datamodule.val_dataloader</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>test_dataloader <span class="op">=</span> datamodule.test_dataloader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="cell-9" class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="at">@partial</span>(jax.jit, static_argnames<span class="op">=</span>(<span class="st">"model"</span>, <span class="st">"norm"</span>))</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> val_step(</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    state: train_state.TrainState,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    x,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    y,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    model,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    norm,</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>):</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> norm <span class="kw">in</span> [<span class="st">"batch"</span>]:</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        pred <span class="op">=</span> model.<span class="bu">apply</span>(</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>            {<span class="st">"params"</span>: state.params, <span class="st">"batch_stats"</span>: state.batch_stats}, x</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        pred <span class="op">=</span> model.<span class="bu">apply</span>({<span class="st">"params"</span>: state.params}, x)</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    metrics <span class="op">=</span> {</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"val/mse"</span>: mse(y, pred),</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"val/mae"</span>: mae(y, pred),</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"val/mse_rel"</span>: mse_relative(y, pred),</span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"val/mae_rel"</span>: mae_relative(y, pred),</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> metrics, pred</span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>val_batch_metrics <span class="op">=</span> []</span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x, y <span class="kw">in</span> val_dataloader:</span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    metrics, pred <span class="op">=</span> val_step(</span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>        state,</span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span>x,</span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>        y<span class="op">=</span>y,</span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>        model<span class="op">=</span>model,</span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>        norm<span class="op">=</span>cfg.model.norm,</span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>    val_batch_metrics.append(metrics)</span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>val_batch_metrics <span class="op">=</span> accumulate_metrics(val_batch_metrics)</span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>metrics <span class="op">=</span> ckpt_manager.metrics(ckpt_manager.best_step())</span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>val_metrics <span class="op">=</span> {k: v <span class="cf">for</span> k, v <span class="kw">in</span> metrics.items() <span class="cf">if</span> <span class="st">"val"</span> <span class="kw">in</span> k}</span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> val_metrics.items():</span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> np.isclose(</span>
-<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>        value, val_batch_metrics[key], atol<span class="op">=</span><span class="fl">1e-6</span></span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>    ), <span class="ss">f"Metric </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss"> does not match: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss"> != </span><span class="sc">{</span>val_batch_metrics[key]<span class="sc">}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>checkpoint_path, cfg <span class="op">=</span> download_ckpt_single_run(random_name)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>kwargs <span class="op">=</span> {<span class="st">"n_steps"</span>: datamodule.num_steps_target_val}</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>state, model, ckpt_manager <span class="op">=</span> restore_experiment_state(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    checkpoint_path,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    kwargs<span class="op">=</span>kwargs,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="cell-10" class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> partial</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> physmodjax.utils.metrics <span class="im">import</span> (</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    accumulate_metrics,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    mae,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    mae_relative,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    mse,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    mse_relative,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-11" class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="at">@partial</span>(jax.jit, static_argnames<span class="op">=</span>(<span class="st">"model"</span>, <span class="st">"norm"</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> val_step(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    state: train_state.TrainState,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    x,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    y,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    model,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    norm,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>):</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> norm <span class="kw">in</span> [<span class="st">"batch"</span>]:</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        pred <span class="op">=</span> model.<span class="bu">apply</span>(</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>            {<span class="st">"params"</span>: state.params, <span class="st">"batch_stats"</span>: state.batch_stats}, x</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        pred <span class="op">=</span> model.<span class="bu">apply</span>({<span class="st">"params"</span>: state.params}, x)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    metrics <span class="op">=</span> {</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"val/mse"</span>: mse(y, pred),</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"val/mae"</span>: mae(y, pred),</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"val/mse_rel"</span>: mse_relative(y, pred),</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"val/mae_rel"</span>: mae_relative(y, pred),</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> metrics, pred</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>val_batch_metrics <span class="op">=</span> []</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x, y <span class="kw">in</span> val_dataloader:</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    metrics, pred <span class="op">=</span> val_step(</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>        state,</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span>x,</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>        y<span class="op">=</span>y,</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>        model<span class="op">=</span>model,</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>        norm<span class="op">=</span>cfg.model.norm,</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>    val_batch_metrics.append(metrics)</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>val_batch_metrics <span class="op">=</span> accumulate_metrics(val_batch_metrics)</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>metrics <span class="op">=</span> ckpt_manager.metrics(ckpt_manager.best_step())</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>val_metrics <span class="op">=</span> {k: v <span class="cf">for</span> k, v <span class="kw">in</span> metrics.items() <span class="cf">if</span> <span class="st">"val"</span> <span class="kw">in</span> k}</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> val_metrics.items():</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> np.isclose(value, val_batch_metrics[key], atol<span class="op">=</span><span class="fl">1e-6</span>), (</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"Metric </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss"> does not match: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss"> != </span><span class="sc">{</span>val_batch_metrics[key]<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>::: {#cell-12 .cell 0=‘e’ 1=‘x’ 2=‘p’ 3=‘o’ 4=‘r’ 5=‘t’}</p>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fix_prepend_ones(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    run_name: <span class="bu">str</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    wandb_project: <span class="bu">str</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>):</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    checkpoint_path, conf <span class="op">=</span> download_ckpt_single_run(run_name, project<span class="op">=</span>wandb_project)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># if conf.model.dynamics_model.model exists but there is no prepend-ones key, add it.</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">hasattr</span>(conf.model, <span class="st">"dynamics_model"</span>):</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">hasattr</span>(conf.model.dynamics_model, <span class="st">"model"</span>):</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="bu">hasattr</span>(conf.model.dynamics_model.model, <span class="st">"prepend_ones"</span>):</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f"Model </span><span class="sc">{</span>run_name<span class="sc">}</span><span class="ss"> has prepend_ones in the wrong place"</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                <span class="kw">del</span> conf.model.dynamics_model.model.prepend_ones</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="bu">hasattr</span>(conf.model.dynamics_model, <span class="st">"prepend_ones"</span>):</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Model </span><span class="sc">{</span>run_name<span class="sc">}</span><span class="ss"> has no prepend_ones"</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>            conf.model.dynamics_model.prepend_ones <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Save config updated</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    conf_path <span class="op">=</span> checkpoint_path <span class="op">/</span> <span class="st">".hydra"</span> <span class="op">/</span> <span class="st">"config.yaml"</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    conf_path.parent.mkdir(parents<span class="op">=</span><span class="va">True</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    OmegaConf.save(conf, conf_path)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::</p>
+<p>::: {#cell-13 .cell 0=‘e’ 1=‘x’ 2=‘p’ 3=‘o’ 4=‘r’ 5=‘t’}</p>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_config_single_run(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    run_name: <span class="bu">str</span>,  <span class="co"># Name of the run to restore</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    project: <span class="bu">str</span>,  <span class="co"># Name of the project on wandb</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> DictConfig:</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Retrieves the configuration of a single run from WandB.</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    filter_dict <span class="op">=</span> {</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"display_name"</span>: run_name,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    api: public.Api <span class="op">=</span> wandb.Api()</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    runs: public.Runs <span class="op">=</span> api.runs(project, filter_dict)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(runs) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="ss">f"No runs found with name </span><span class="sc">{</span>run_name<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(runs) <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="ss">f"More than one run found with name </span><span class="sc">{</span>run_name<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    run: public.Run <span class="op">=</span> runs[<span class="dv">0</span>]</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    conf <span class="op">=</span> OmegaConf.create(run.config)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> conf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>:::</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/rodrigodzf\.github\.io\/physmodjax");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/rodrigodzf\.github\.io\/physmodjax");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1094,188 +1380,164 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/rodrigodzf/physmodjax/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/rodrigodzf/physmodjax/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

@@ -1,107 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/index.html</loc>
-    <lastmod>2024-09-05T08:21:06.051Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/scripts/dataset_generation.html</loc>
-    <lastmod>2024-09-05T08:21:08.546Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/solver/wave2d_solver_tensionmodulated.html</loc>
-    <lastmod>2024-09-05T08:21:08.259Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/solver/wave1d_solver_fe.html</loc>
-    <lastmod>2024-09-05T08:21:08.600Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/solver/wave1d_solver_modal.html</loc>
-    <lastmod>2024-09-05T08:21:08.597Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/models/fno.html</loc>
-    <lastmod>2024-09-05T08:21:07.907Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/models/fno_rnn.html</loc>
-    <lastmod>2024-09-05T08:21:07.895Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/models/autoencoders.html</loc>
-    <lastmod>2024-09-05T08:21:08.294Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/models/ssm.html</loc>
-    <lastmod>2024-09-05T08:21:07.775Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/utils/ftm.html</loc>
-    <lastmod>2024-09-05T08:21:08.001Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/utils/checkpoint.html</loc>
-    <lastmod>2024-09-05T08:21:08.820Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/utils/plot.html</loc>
-    <lastmod>2024-09-05T08:21:07.530Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/utils/linear.html</loc>
-    <lastmod>2024-09-05T08:21:08.506Z</lastmod>
-  </url>
-  <url>
     <loc>https://rodrigodzf.github.io/physmodjax/results.html</loc>
-    <lastmod>2024-09-05T08:13:05.505Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/utils/metrics.html</loc>
-    <lastmod>2024-09-05T08:21:07.473Z</lastmod>
+    <lastmod>2025-07-08T13:58:40.688Z</lastmod>
   </url>
   <url>
     <loc>https://rodrigodzf.github.io/physmodjax/utils/modal.html</loc>
-    <lastmod>2024-09-05T08:21:06.853Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/utils/losses.html</loc>
-    <lastmod>2024-09-05T08:21:07.639Z</lastmod>
+    <lastmod>2025-07-08T09:36:09.907Z</lastmod>
   </url>
   <url>
     <loc>https://rodrigodzf.github.io/physmodjax/utils/data.html</loc>
-    <lastmod>2024-09-05T08:21:07.919Z</lastmod>
+    <lastmod>2025-07-08T11:51:10.087Z</lastmod>
   </url>
   <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/models/mlp.html</loc>
-    <lastmod>2024-09-05T08:21:07.600Z</lastmod>
+    <loc>https://rodrigodzf.github.io/physmodjax/utils/eigenvalues.html</loc>
+    <lastmod>2025-07-08T11:51:10.077Z</lastmod>
   </url>
   <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/models/recurrent.html</loc>
-    <lastmod>2024-09-05T08:21:07.741Z</lastmod>
+    <loc>https://rodrigodzf.github.io/physmodjax/utils/plot.html</loc>
+    <lastmod>2025-07-08T09:36:09.914Z</lastmod>
   </url>
   <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/models/conv.html</loc>
-    <lastmod>2024-09-05T08:21:07.796Z</lastmod>
+    <loc>https://rodrigodzf.github.io/physmodjax/utils/clamp.html</loc>
+    <lastmod>2025-07-08T12:00:47.176Z</lastmod>
   </url>
   <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/solver/wave2d_solver_modal.html</loc>
-    <lastmod>2024-09-05T08:21:07.906Z</lastmod>
+    <loc>https://rodrigodzf.github.io/physmodjax/scripts/dataset_generation.html</loc>
+    <lastmod>2024-09-11T11:32:52.849Z</lastmod>
   </url>
   <url>
-    <loc>https://rodrigodzf.github.io/physmodjax/solver/wave1d_solver_pseudospectral.html</loc>
-    <lastmod>2024-09-05T08:21:08.613Z</lastmod>
+    <loc>https://rodrigodzf.github.io/physmodjax/JAES.html</loc>
+    <lastmod>2025-07-08T14:37:50.457Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/solver/wave1d_solver_fe.html</loc>
+    <lastmod>2025-07-08T11:41:11.325Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/solver/wave1d_solver_modal.html</loc>
+    <lastmod>2025-07-08T11:41:11.332Z</lastmod>
   </url>
   <url>
     <loc>https://rodrigodzf.github.io/physmodjax/solver/impulse_generator.html</loc>
-    <lastmod>2024-09-05T08:21:08.407Z</lastmod>
+    <lastmod>2025-07-08T11:41:11.299Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/models/autoencoders.html</loc>
+    <lastmod>2025-07-08T09:29:52.528Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/models/conv.html</loc>
+    <lastmod>2025-07-08T09:29:52.533Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/models/ssm.html</loc>
+    <lastmod>2025-07-08T09:29:52.547Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/models/fno_rnn.html</loc>
+    <lastmod>2025-07-08T09:29:52.536Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/models/mlp.html</loc>
+    <lastmod>2025-07-08T09:29:52.541Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/models/recurrent.html</loc>
+    <lastmod>2025-07-08T09:29:52.545Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/models/fno.html</loc>
+    <lastmod>2025-07-08T09:29:52.539Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/solver/wave2d_solver_tensionmodulated.html</loc>
+    <lastmod>2025-07-08T11:41:11.359Z</lastmod>
   </url>
   <url>
     <loc>https://rodrigodzf.github.io/physmodjax/solver/wave1d_solver_tensionmodulated.html</loc>
-    <lastmod>2024-09-05T08:21:08.758Z</lastmod>
+    <lastmod>2025-07-08T11:41:11.341Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/solver/wave2d_solver_modal.html</loc>
+    <lastmod>2025-07-08T11:41:11.354Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/solver/wave1d_solver_pseudospectral.html</loc>
+    <lastmod>2025-07-08T11:41:11.336Z</lastmod>
   </url>
   <url>
     <loc>https://rodrigodzf.github.io/physmodjax/scripts/train_rnn.html</loc>
-    <lastmod>2024-09-05T08:21:09.091Z</lastmod>
+    <lastmod>2025-07-08T09:36:09.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/index.html</loc>
+    <lastmod>2024-09-11T11:32:52.848Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/utils/linear.html</loc>
+    <lastmod>2025-07-08T09:36:09.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/utils/metrics.html</loc>
+    <lastmod>2025-07-08T09:52:03.523Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/utils/checkpoint.html</loc>
+    <lastmod>2025-07-08T12:06:15.843Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/utils/ftm.html</loc>
+    <lastmod>2025-07-08T12:09:19.942Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rodrigodzf.github.io/physmodjax/utils/losses.html</loc>
+    <lastmod>2025-07-08T09:36:09.909Z</lastmod>
   </url>
 </urlset>
